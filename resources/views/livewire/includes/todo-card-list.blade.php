@@ -21,6 +21,8 @@
                                 @enderror
                     @else
                     <h3 class="text-lg text-semibold text-gray-800">{{$todo->name}}</h3>
+                    <br>
+                    <img src="{{$todo->getFirstMediaUrl('image')}}" width="120px"><br/>
                   @endif
                 </div>
 

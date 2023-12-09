@@ -3,25 +3,35 @@
 namespace App\Livewire;
 
 use App\Models\Todo;
+
 use Livewire\Component;
-use Livewire\Attributes\Rule;
 use Livewire\WithPagination;
+use Livewire\Attributes\Rule;
+use Livewire\WithFileUploads;
 
 class TodoList extends Component
 {
    use WithPagination;
+   use WithFileUploads;
     #[Rule('required|min:3')]
     public $name;
+    #[Rule('required|image')]
+    public $image;
     public $search ;
     public $todoID ;
     public $editingTodoID ;
     #[Rule('required|min:3')]
     public $editingTodoName ;
 
-
+     
     public function create(){
      $validated=$this->validateOnly('name');
-     Todo::create($validated);
+     $todo=Todo::create($validated);
+     if ($this->image) {
+        $todo->addMedia($this->image->getRealPath())
+        ->toMediaCollection('image');
+       
+    }
      $this->reset('name');
      session()->flash('success','Created');
     }
