@@ -12,19 +12,20 @@ class ShowPosts extends Component
     public $countries;
     public $cities;
 
-    public $selectedCountry;
+    public $selectedcountry;
     
 
     public function mount()
     {
         $this->countries = Country::all();
         
-        $this->cities=[];
+        //$this->cities=[];
     }
 
-    public function updatedSelectedCountry($value)
+    public function updatedSelectedCountry()
     {
-        $this->cities = City::where('country_id', $value)->get();
+       // dd($this->selectedcountry);
+      $this->cities = City::where('country_id', $this->selectedcountry)->get();
     }
     public function render()
     {
