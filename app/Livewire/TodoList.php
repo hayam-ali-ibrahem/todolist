@@ -3,7 +3,7 @@
 namespace App\Livewire;
 
 use App\Models\Todo;
-
+use Livewire\Attributes\Url;
 use Livewire\Component;
 use Livewire\WithPagination;
 use Livewire\Attributes\Rule;
@@ -17,7 +17,8 @@ class TodoList extends Component
     public $name;
     #[Rule('required|image')]
     public $image;
-    public $search ;
+    #[Url] 
+    public $search = '';
     public $todoID ;
     public $editingTodoID ;
     #[Rule('required|min:3')]

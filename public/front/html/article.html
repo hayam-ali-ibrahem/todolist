@@ -1,0 +1,1332 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" x-data="{ dir: 'rtl' }" x-bind:dir="dir" style="overflow-x: hidden;">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Namaa Real Estate</title>
+    <link rel="icon" type="image/x-icon" href="../img/namaa+mv-logo.png" />
+    <link rel="manifest" href="../manifes1t.json">
+    <link rel="stylesheet" href="../css/main.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <style>
+        input[type="range"]::-webkit-slider-thumb {
+            pointer-events: all;
+            width: 24px;
+            height: 24px;
+            -webkit-appearance: none;
+            /* @apply w-6 h-6 appearance-none pointer-events-auto; */
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/9.3.2/swiper-bundle.css" integrity="sha512-zar81H5lVN36QFsq/da1hxpOLODXK4/oFwBGOFrvdWX6SBe3NWriWTQS6YQDVfW5fDeb2Vry41YQCELOe8cHww==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/9.3.2/swiper-bundle.min.js" integrity="sha512-+z66PuMP/eeemN2MgRhPvI3G15FOBbsp5NcCJBojg6dZBEFL0Zoi0PEGkhjubEcQF7N1EpTX15LZvfuw+Ej95Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.12.2/cdn.min.js" integrity="sha512-SnZjbtneeEQiaUki1naQb2pRse3RH9T+diqi+PCwp4IBugV+AQhshDySAon9ak2ohfvk3DubHFAmlq0yneLvFg==" crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
+      <script src="../js/app.js" defer></script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+</head>
+
+<body class="scrollbar-hide min-h-screen ">
+    <!--page loader-->
+    <div class="bg-white w-screen h-screen z-[91111111111219] fixed top-0 left-0 flex items-center justify-center"
+        id="preloader">
+        <img class="logoPicNav w-[20%] maxsm:w-[70%] maxlg:[50%] mx-auto" data-src="../img/Group 40847.png" alt="" />
+    </div>
+
+
+
+  <!--header starts-->
+  <header id="header" class="sticky w-full z-50 top-0" x-data="{sidebar:false }">
+    <!--top section -->
+    <div class="container bg-primary">
+      <div class="w-full flex z-[9999999] items-center justify-between mt-0 h-[39px]">
+        <div class="flex items-center gap-[14px] maxlg:gap-[17px] maxvarysm:gap-2 maxvarysmvarysm:gap-1">
+          <div class="flex items-center gap-[10px] maxvarysmvarysm:gap-1">
+            <i class="fa-regular fa-envelope text-2xl maxsm:text-base text-secondary-100 max"></i>
+            <a href="mailto:info@namaaalkhaleej.com"
+              class="text-secondary-100 font-normal text-[17px] leading-[29px] maxsm:text-[13px] maxvarysm:text-[12px] maxvarysmvarysm:text-[10px]">info@namaaalkhaleej.com</a>
+          </div>
+
+          <div class="flex items-center gap-[10px] maxlg:gap-1 maxvarysmvarysm:gap-[2px]">
+            <i
+              class="fa-solid fa-phone-flip text-lg maxlg:text-sm maxsm:text-[12px] text-secondary-100 ltr:mr-1 rtl:ml-1"></i>
+            <a href="tel:+201093744441"
+              class="text-secondary-100 text-[17px] maxlg:text-sm maxsm:text-[13px] maxvarysm:text-[12px] maxvarysmvarysm:text-[10px]">201093744441+</a>
+            <span class="text-secondary-100 text-xl maxsm:text-base maxvarysm:text-xs font-normal">-</span>
+            <a class="text-secondary-100 text-[17px] maxlg:text-sm maxsm:text-[13px] maxvarysm:text-[12px] maxvarysmvarysm:text-[10px]"
+              href="tel:+201097777724">201097777724+</a>
+          </div>
+        </div>
+        <div class="flex maxlg:hidden items-center gap-8">
+          <div x-data="{toggleDir() { this.dir = this.dir === 'ltr' ? 'rtl' : 'ltr' }}">
+            <button id="dropdownNavbarLink" x-on:click="toggleDir()"
+              class="flex items-center justify-between text-base w-full gap-[14px] font-normal text-secondary-100 hover:scale-110">
+              <!-- <i class="fa-solid fa-angle-down mt-1 text-xl"></i> -->
+              English
+              <i class="fa-solid fa-language text-3xl"></i>
+            </button>
+            <!-- Dropdown menu -->
+            <!-- <div x-show="langDropdown" @click.away="langDropdown=false"
+                  class="z-50 absolute font-normal bg-white rounded-lg shadow w-28">
+                  <ul class="py-2 text-sm ">
+                      <li class="px-2 text-secondary-700">
+                          <a href="#"
+                              class="block px-2 py-2 border-b hover:bg-primary hover:text-secondary-100">Arabic</a>
+                      </li>
+                      <li class="px-2 text-secondary-700">
+                          <a href="#"
+                              class="block px-2 py-2 hover:bg-primary hover:text-secondary-100">French</a>
+                      </li>
+                  </ul>
+              </div> -->
+          </div>
+          <div class="flex gap-6">
+            <a href="#"><i class="fa-brands fa-youtube text-lg text-white hover:scale-110"></i></a>
+            <a href="#"><i class="fa-brands fa-facebook text-lg text-white hover:scale-110"></i></a>
+            <a href="#"><i class="fa-brands fa-linkedin text-lg text-white hover:scale-110"></i></a>
+            <a href="#"><i class="fa-brands fa-twitter text-lg text-white hover:scale-110"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram text-lg text-white hover:scale-110"></i></a>
+            <a href="#"><i class="fa-brands fa-telegram text-lg text-white hover:scale-110"></i></a>
+            <a href="#"><i class="fa-brands fa-tiktok text-lg text-white hover:scale-110"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--end of top section-->
+
+    <!--sidebar-->
+    <div class="fixed w-full h-full inset-0 z-50" id="mobile-menu" x-description="Mobile menu" x-show="sidebar">
+      <div class="flex flex-col rtl:right-0 ltr:left-0 w-80 fixed top-0 bg-white h-full overflow-auto z-30"
+        x-show="sidebar" @click.away="sidebar=false">
+        <div class="mb-auto">
+          <!---->
+          <div class="w-4 relative">
+            <i @click="sidebar = !sidebar"
+              class="fa-solid fa-xmark w-full text-primary absolute top-6 rtl:right-5 ltr:left-5 cursor-pointer"></i>
+          </div>
+
+          <div class="relative mt-[40px] flex justify-center" :class="{ 'hidden': !$isActivePage('/profile.html') }">
+            <a href="profile.html"
+              class="text-white flex justify-center w-fit items-center bg-primary font-normal rounded-full p-1 text-base hover:scale-110">
+              <div class="rounded-full w-14 aspect-square">
+                <img class="rounded-full w-full aspect-square" data-src="../img/NoPath - Copy (6).png" alt="" />
+              </div>
+            </a>
+          </div>
+          <div class="relative flex justify-center mt-[60px]" x-data="{profileDropdown2 : false}" :class="{ 'hidden': $isActivePage('/profile.html') }">
+          <button type="button" @click="profileDropdown2=!profileDropdown2"
+            class="text-white flex justify-center gap-2 items-center bg-primary w-[150px] font-normal rounded-xl  text-base py-2.5">
+            حسابي
+
+            <i class="fa-solid fa-user"></i>
+          </button>
+          <div x-show="profileDropdown2" @click.away="profileDropdown2=false"
+            class="z-50 absolute font-normal top-12 border shadow-sm shadow-secondary-1200 mb-1 bg-secondary-100 rounded-lg w-52">
+            <ul class="py-2 rounded-lg text-sm text-secondary-1100 bg-secondary-100">
+              <li class="text-secondary-700 bg-secondary-100">
+                <a href="login.html"
+                  class="flex gap-2 text-lg font-normal items-center bg-secondary-100 px-2 rounded py-2 border-b hover:bg-primary hover:text-secondary-100">
+                  <i class="fa-solid fa-user"></i>
+                  تسجيل الدخول
+                </a>
+              </li>
+              <li class="text-secondary-700">
+                <a href="newaccount.html"
+                  class="flex rounded px-2 font-normal items-center bg-secondary-100 text-lg gap-2 py-2 hover:bg-primary hover:text-secondary-100"><i
+                    class="fa-solid fa-user-plus"></i> إنشاء حساب
+                  جديد</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+          <!--navigation-->
+          <div class="mt-10 scrollbar-hide" >
+            <div class="relative flex-col flex-wrap items-center justify-between px-[40px]">
+              <ul class="w-full grid gap-y-[20px] items-center text-secondary-1100">
+                <li class="min-w-max flex gap-4">
+                  <i class="fa-solid fa-house text-lg"></i>
+                  <a class="inline-block text-base text-secondary-1100 font-normal no-underline"
+                    href="index.html">الرئيسية</a>
+                </li>
+                <li class="min-w-max flex gap-4">
+                  <i class="fa-solid fa-users text-lg"></i>
+                  <a class="inline-block text-base text-secondary-1100 font-normal no-underline"
+                    href="about_company.html">عن الشركة</a>
+                </li>
+                <li class="min-w-max flex gap-4">
+                  <i class="fa-solid fa-photo-film text-lg"></i>
+                  <div x-data="{contactDropdown2:false}">
+                    <button id="dropdownNavbarLink" @click="contactDropdown2=!contactDropdown2"
+                      class="flex items-center text-base w-full gap-1 font-normal">
+                      <span class="text-secondary-1100">المعرض</span>
+                      <i class="fa-solid fa-angle-down mt-2 text-sm"></i>
+                    </button>
+                    <!-- Dropdown menu -->
+
+                    <ul class="text-sm text-secondary-1100 px-4 grid gap-3 mt-5" @click.away="contactDropdown2=false"
+                      x-show="contactDropdown2">
+                      <li class="text-secondary-1100">
+                        <a href="Photo_gallery.html" class="block rounded text-sm font-normal">معرض الصور</a>
+                      </li>
+                      <li class="text-secondary-1100">
+                        <a href="video_gallery.html" class="block rounded text-sm font-normal">معرض الفديوهات</a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                <li class="min-w-max flex gap-4">
+                  <i class="fa-solid fa-building text-lg"></i>
+                  <div x-data="{galleryDropdown2:false}">
+                    <button id="dropdownNavbarLink" @click="galleryDropdown2=!galleryDropdown2"
+                      class="flex items-center text-secondary-1100 text-base w-full gap-1 font-normal">
+                      <span>الاقسام</span>
+
+                      <i class="fa-solid fa-angle-down mt-2 text-sm"></i>
+                    </button>
+                    <!-- Dropdown menu -->
+
+                    <ul class="text-sm text-secondary-1100 px-4 grid gap-3 mt-5" x-show="galleryDropdown2"
+                      @click.away="galleryDropdown2=false">
+                      <li class="text-secondary-1100">
+                        <a href="category.html" class="block text-sm rounded font-normal">شقق</a>
+                      </li>
+                      <li class="text-secondary-1100">
+                        <a href="category.html" class="block text-sm rounded font-normal">فلل</a>
+                      </li>
+                      <li class="text-secondary-1100">
+                        <a href="category.html" class="block text-sm rounded font-normal">أراضي</a>
+                      </li>
+                      <li class="text-secondary-1100">
+                        <a href="category.html" class="block text-sm rounded font-normal">مول</a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+
+                <li class="min-w-max flex gap-4">
+                  <i class="fa-solid fa-city text-lg"></i>
+                  <a class="inline-block text-base text-secondary-1100 font-normal no-underline"
+                    href="our_projects.html">مشاريعنا</a>
+                </li>
+                <li class="min-w-max flex gap-4">
+                  <i class="fa-brands fa-blogger-b text-lg"></i>
+                  <a class="inline-block text-base text-secondary-1100 font-normal no-underline"
+                    href="blog.html">المدونه</a>
+                </li>
+                <li class="min-w-max flex gap-4">
+                  <i class="fa-solid fa-phone text-lg"></i>
+                  <div x-data="{contactDropdown2:false}">
+                    <button id="dropdownNavbarLink" @click="contactDropdown2=!contactDropdown2"
+                      class="flex items-center text-secondary-1100 text-base w-full gap-1 font-normal">
+                      تواصل معانا
+                      <i class="fa-solid fa-angle-down mt-2 text-sm"></i>
+                    </button>
+                    <ul class="text-base text-secondary-1100 px-4 grid gap-3 mt-5" x-show="contactDropdown2"
+                      @click.away="contactDropdown2=false">
+                      <li class="text-secondary-1100">
+                        <a href="contact_us.html" class="block rounded text-sm px-2 font-normal">اتصل بنا</a>
+                      </li>
+                      <li class="text-secondary-1100">
+                        <a href="customer_request.html" class="block rounded text-sm px-2 font-normal">تقديم طلب</a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="grid gap-8 items-center px-14 mt-20">
+            <div class="flex justify-evenly items-center">
+              <div class="relative">
+                <a href="compare.html">
+                  <i class="fa-solid fa-code-compare text-[27px] text-primary"></i></a>
+
+                <div
+                  class="absolute inline-flex items-center justify-center w-7 h-7 top-[-9px] right-[16px] text-[17px] font-normal text-white bg-primary rounded-full">
+                  8
+                </div>
+              </div>
+              <div class="relative">
+                <a href="favorite.html"><i class="fa-regular fa-heart text-[27px] text-primary"></i></a>
+
+                <div
+                  class="absolute flex items-center justify-center w-7 h-7 -top-[7px] right-[16px] text-[16px] font-normal text-white bg-primary rounded-full">
+                  8
+                </div>
+              </div>
+            </div>
+            <div class="grid gap-4">
+
+              <div class="px-8" x-data="{toggleDir() { this.dir = this.dir === 'ltr' ? 'rtl' : 'ltr' }}">
+                <button id="dropdownNavbarLink" x-on:click="toggleDir()"
+                  class="flex text-secondary-1100 items-center text-2xl w-full gap-[9px] font-normal">
+                  English
+                  <i class="fa-solid fa-language text-4xl"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--end of sidebar-->
+
+    <!-- navbar starts-->
+    <div>
+      <div class="w-full flex bg-secondary-100 items-center lg:gap-[4.2%] mt-0 container h-[65px] maxlg:h-[60px]">
+        <div class="maxlg:block hidden pr-4 order-1">
+          <button id="nav-toggle" @click="sidebar=true"
+            class="flex items-center p-1 text-primary focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+            <i class="fa-solid fa-bars-staggered w-6 h-6"></i>
+          </button>
+        </div>
+        <!--logo pic for pc-->
+        <div class="flex min-w-max maxxl:hidden items-center py-[5px] order-1">
+          <a class="no-underline hover:no-underline" href="index.html"><img class="!h-[51px] !w-[217px]"
+              data-src="../img/Group 41310@2x.png" alt="" />
+          </a>
+        </div>
+        <!--page nav names starts-->
+        <div
+          class="flex-grow lg:flex lg:items-center lg:w-auto maxlg:hidden lg:mt-0 bg-secondary-100 lg:bg-transparent text-secondary-200 z-20 order-2"
+          id="nav-content">
+          <ul class="lg:flex gap-[14px] items-center text-secondary-1100">
+            <li class="min-w-max" :class="{ 'active-header': $isActivePage('/index.html') }">
+              <a class="inline-block text-base font-normal no-underline py-5 hover:text-primary"
+                href="index.html">الرئيسية</a>
+            </li>
+            <li class="min-w-max" :class="{ 'active-header': $isActivePage('/about_company.html') }">
+              <a class="inline-block text-base py-5 font-normal no-underline hover:text-primary"
+                href="about_company.html">عن الشركة</a>
+            </li>
+            <li class="min-w-max">
+              <div x-data="{contactDropdown:false}"
+                :class="[$isActivePage('/video_gallery.html') || $isActivePage('/Photo_gallery.html') ? 'active-header' : '']">
+                <button id="dropdownNavbarLink" @click="contactDropdown=!contactDropdown"
+                  class="flex items-center py-5 text-secondary-1100 justify-between text-[16px] leading-[22px] w-full gap-[5px] font-normal hover:text-primary">
+                  <span>المعرض</span>
+                  <i class="fa-solid fa-angle-down text-[11px] leading-none"></i>
+                </button>
+                <!-- Dropdown menu -->
+                <div x-show="contactDropdown" @click.away="contactDropdown=false"
+                  class="z-50 absolute font-normal bg-white rounded-xl shadow w-[195px]">
+                  <ul class="py-2 text-sm">
+                    <li class="text-secondary-700">
+                      <a href="Photo_gallery.html"
+                        class="block rounded text-secondary-700 text-[17px] rtl:pr-9 ltr:pl-9 py-2 border-b font-normal hover:bg-primary hover:text-secondary-100">معرض
+                        الصور</a>
+                    </li>
+                    <li class="text-secondary-700">
+                      <a href="video_gallery.html"
+                        class="block rounded text-[17px] rtl:pr-9 ltr:pl-9 py-2 font-normal hover:bg-primary hover:text-secondary-100">معرض
+                        الفديوهات</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li class="min-w-max">
+              <div x-data="{galleryDropdown:false}">
+                <button id="dropdownNavbarLink" @click="galleryDropdown=!galleryDropdown"
+                  class="flex items-center py-5 justify-between text-base w-full gap-[5px] font-normal hover:text-primary"
+                  :class="{ 'active-header': $isActivePage('/category.html') }">
+                  <span>الاقسام</span>
+
+                  <i class="fa-solid fa-angle-down text-xs"></i>
+                </button>
+                <!-- Dropdown menu -->
+                <div x-show="galleryDropdown" @click.away="galleryDropdown=false"
+                  class="z-50 absolute font-normal bg-white rounded-lg shadow w-48">
+                  <ul class="py-2 text-sm text-secondary-700">
+                    <li class="text-secondary-700">
+                      <a href="category.html"
+                        class="block text-lg rtl:pr-9 ltr:pl-9 py-2 border-b rounded font-normal hover:bg-primary hover:text-secondary-100">شقق</a>
+                    </li>
+                    <li class="text-secondary-700">
+                      <a href="category.html"
+                        class="block rtl:pr-9 ltr:pl-9 text-lg py-2 border-b rounded font-normal hover:bg-primary hover:text-secondary-100">فلل</a>
+                    </li>
+                    <li class="text-secondary-700">
+                      <a href="category.html"
+                        class="block text-lg rtl:pr-9 ltr:pl-9 py-2 border-b rounded font-normal hover:bg-primary hover:text-secondary-100">أراضي</a>
+                    </li>
+                    <li class="text-secondary-700">
+                      <a href="category.html"
+                        class="block text-lg rtl:pr-9 ltr:pl-9 py-2 rounded font-normal hover:bg-primary hover:text-secondary-100">مول</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+
+            <li class="min-w-max">
+              <a class="inline-block text-base py-5 font-normal no-underline hover:text-primary"
+                :class="{ 'active-header': $isActivePage('/our_projects.html') }" href="our_projects.html">مشاريعنا</a>
+            </li>
+            <li class="min-w-max">
+              <a class="inline-block text-base py-5 font-normal no-underline hover:text-primary"
+                :class="{ 'active-header': $isActivePage('/blog.html') }" href="blog.html">المدونه</a>
+            </li>
+            <li class="min-w-max"
+              :class="[$isActivePage('/contact_us.html') || $isActivePage('/customer_request.html') ? 'active-header' : '']">
+              <div x-data="{contactDropdown:false}">
+                <button id="dropdownNavbarLink" @click="contactDropdown=!contactDropdown"
+                  class="flex items-center justify-between py-5 text-base w-full gap-1 font-normal hover:text-primary">
+                  <span>تواصل معانا</span>
+                  <i class="fa-solid fa-angle-down text-xs"></i>
+                </button>
+                <!-- Dropdown menu -->
+                <div x-show="contactDropdown" @click.away="contactDropdown=false"
+                  class="z-50 absolute font-normal bg-white rounded-lg shadow w-48">
+                  <ul class="py-2 text-base">
+                    <li class="text-secondary-700">
+                      <a href="contact_us.html"
+                        class="block rounded text-[17px] rtl:pr-9 ltr:pl-9 py-2 border-b font-normal hover:bg-primary hover:text-secondary-100">اتصل
+                        بنا</a>
+                    </li>
+                    <li class="text-secondary-700">
+                      <a href="customer_request.html"
+                        class="block rounded text-[17px] rtl:pr-9 ltr:pl-9 py-2 hover:bg-primary font-normal hover:text-secondary-100">تقديم
+                        طلب</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <!--page nav names ends-->
+
+        <!--icons ,search ,personal account -->
+        <div class="flex w-[22%] gap-[11%] justify-center items-center maxlg:order-2 lg:order-3">
+          <div class="w-[49%] gap-[22%] maxxl:gap-[18%] items-center flex">
+            <div class="relative maxlg:hidden">
+              <a href="compare.html">
+                <i class="fa-solid fa-code-compare text-2xl text-primary font-bold hover:scale-110"></i></a>
+
+              <div
+                class="absolute inline-flex items-center px-1 justify-center w-6 h-6 right-4 -top-1 text-[14px] font-bold text-white bg-primary rounded-full">
+                4
+              </div>
+            </div>
+            <div class="relative maxlg:hidden">
+              <a href="favorite.html">
+                <i class="fa-regular fa-heart text-[27px] text-primary hover:scale-110"></i>
+              </a>
+              <div
+                class="absolute inline-flex items-center px-1 justify-center w-6 h-6 right-4 -top-1 text-[14px] font-bold text-white bg-primary rounded-full">
+                12
+              </div>
+            </div>
+            <!--search button and dropdown-->
+            <div class="inline-block text-xl relative text-primary" x-data="{searchDropdown:false,search:false}">
+              <button @click="searchDropdown=!searchDropdown">
+                <i
+                  class="fa-solid fa-magnifying-glass text-[26px] text-primary maxlg:ltr:ml-3 maxlg:rtl:mr-3 hover:scale-110"></i>
+              </button>
+
+              <form x-show="searchDropdown"
+                class="maxlg:fixed maxlg:inset-0 maxlg:w-screen maxlg:h-screen maxlg:flex maxlg:items-start maxlg:justify-center maxlg:overflow-auto maxlg:px-[100px] shadow-2xl maxlg:bg-[#23418F] maxlg:bg-opacity-30"
+                action="category.html" method="get">
+                <div x-data="{advancedSearchDropdown:false}" @click.away="searchDropdown=false"
+                  class="z-40 absolute lg:top-12 rtl:pl-[12px] border ltr:pr-[12px] ltr:pl-[21px] rtl:pr-[21px] py-3 flex flex-col items-center font-normal bg-white lg:ltr:right-0 lg:rtl:left-0 rounded-xl gap-[6px] maxlg:w-auto maxlg:min-w-fit maxlg:mt-9 maxlg:mx-auto">
+                  <div class="flex items-center font-normal gap-[6px]">
+                    <div class="relative lg:w-[588px]">
+                      <button id="search-btn" type="button"
+                        class="absolute inset-y-0 ltr:right-3 rtl:left-3 flex items-center" disabled>
+                        <i class="fa-solid fa-magnifying-glass text-xl hover:scale-110"></i>
+                      </button>
+
+                      <input type="search" name="search_id" id="search-input"
+                        class="appearance-none w-full px-2 py-1 text-secondary-1100 bg-white border rounded-md focus:border-gray-500 focus:outline-none focus:ring focus:ring-gray-500 focus:ring-opacity-40"
+                        placeholder="Search" required />
+                    </div>
+                    <div>
+                      <button @click="advancedSearchDropdown=!advancedSearchDropdown" type="button"
+                        class="text-white flex justify-center gap-1 items-center bg-primary w-[137px] font-normal rounded-lg text-base py-2.5 hover:scale-110">
+                        بحث متقدم <i class="fa-solid fa-angle-down mt-1"></i>
+                      </button>
+                    </div>
+                  </div>
+                  <div x-show="advancedSearchDropdown" class="grid gap-2 grid-cols-4 w-full">
+                    <div class="flex flex-col maxlg:w-full col-span-2 maxlg:col-span-4">
+                      <label for="PurchasedDate" class="block text-xl mb-3 font-normal text-secondary-800">الدولة
+                      </label>
+                      <div class="w-full flex flex-col items-center">
+                        <div class="w-full">
+                          <div x-data="selectConfigs()" x-init="fetchOptions()"
+                            class="flex flex-col items-center relative">
+                            <div class="w-full">
+                              <div @click.away="close()" class="p-1 bg-white flex border border-gray-200 rounded-md">
+                                <input x-model="filter" name="country_id"
+                                  x-transition:leave="transition ease-in duration-100"
+                                  x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0"
+                                  @mousedown="open()" @keydown.enter.stop.prevent="selectOption()"
+                                  @keydown.arrow-up.prevent="focusPrevOption()"
+                                  @keydown.arrow-down.prevent="focusNextOption()"
+                                  class="px-2 appearance-none outline-none w-full placeholder:text-sm placeholder:text-secondary-900"
+                                  placeholder="قم بإختيار الدولة" required />
+                                <div class="flex w-6 justify-center items-center">
+                                  <i class="fa fa-angle-down text-secondary-800/40" @mousedown="toggle()"></i>
+                                </div>
+                              </div>
+                            </div>
+                            <div x-show="isOpen()"
+                              class="absolute shadow bg-white mt-12 text-sm z-40 w-full lef-0 rounded max-h-select overflow-y-auto svelte-5uyqqj">
+                              <div class="flex flex-col w-full">
+                                <template x-for="(option, index) in filteredOptions()" :key="index">
+                                  <div @click="onOptionClick(index)" :class="classOption(option.login.uuid, index)"
+                                    :aria-selected="focusedOptionIndex === index">
+                                    <div
+                                      class="flex w-full items-center p-2 pl-2 border-transparent border-l-2 relative hover:border-primary">
+                                      <div class="w-full items-center flex">
+                                        <div class="mx-2 -mt-1">
+                                          <span x-text="option.name.first + ' ' + option.name.last"></span>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </template>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="flex flex-col maxlg:w-full col-span-2 maxlg:col-span-4">
+                      <label for="PurchasedDate" class="block text-xl mb-3 font-normal text-secondary-800">المشروع
+                      </label>
+                      <div class="w-full flex flex-col items-center">
+                        <div class="w-full">
+                          <div x-data="selectConfigs()" x-init="fetchOptions()"
+                            class="flex flex-col items-center relative">
+                            <div class="w-full">
+                              <div @click.away="close()" class="p-1 bg-white flex border border-gray-200 rounded-md">
+                                <input x-model="filter" name="project_id"
+                                  x-transition:leave="transition ease-in duration-100"
+                                  x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0"
+                                  @mousedown="open()" @keydown.enter.stop.prevent="selectOption()"
+                                  @keydown.arrow-up.prevent="focusPrevOption()"
+                                  @keydown.arrow-down.prevent="focusNextOption()"
+                                  class="px-2 appearance-none outline-none w-full placeholder:text-sm placeholder:text-secondary-900"
+                                  placeholder="قم بإختيار المشروع" required />
+                                <div class="flex w-6 justify-center items-center">
+                                  <i class="fa fa-angle-down text-secondary-800/40" @mousedown="toggle()"></i>
+                                </div>
+                              </div>
+                            </div>
+                            <div x-show="isOpen()"
+                              class="absolute shadow bg-white mt-12 text-sm z-40 w-full lef-0 rounded max-h-select overflow-y-auto svelte-5uyqqj">
+                              <div class="flex flex-col w-full">
+                                <template x-for="(option, index) in filteredOptions()" :key="index">
+                                  <div @click="onOptionClick(index)" :class="classOption(option.login.uuid, index)"
+                                    :aria-selected="focusedOptionIndex === index">
+                                    <div
+                                      class="flex w-full items-center p-2 pl-2 border-transparent border-l-2 relative hover:border-primary">
+                                      <div class="w-full items-center flex">
+                                        <div class="mx-2 -mt-1">
+                                          <span x-text="option.name.first + ' ' + option.name.last"></span>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </template>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="flex justify-center w-full col-span-1 maxlg:col-span-2">
+                      <div x-data="range2()" x-init="mintrigger(); maxtrigger()" class="relative max-w-xl w-full">
+                        <p
+                          class="block text-[13px] rtl:text-right ltr:text-left text-xl font-normal text-secondary-800">
+                          المساحة
+                        </p>
+                        <div class="flex gap-1 items-center py-2">
+                          <div>
+                            <input type="text" maxlength="5" x-on:input="mintrigger" x-model="minprice"
+                              class="text-secondary-800/40 rounded w-12" />
+                          </div>
+                          <span class="text-secondary-800/40">-</span>
+                          <div>
+                            <input type="text" maxlength="5" x-on:input="maxtrigger2" x-model="maxprice"
+                              class="text-secondary-800/40 rounded w-12" />
+                          </div>
+                        </div>
+                        <div>
+                          <input type="range" step="100" x-bind:min="min" x-bind:max="max" x-on:input="mintrigger"
+                            x-model="minprice"
+                            class="absolute pointer-events-none appearance-none z-20 h-2 w-full opacity-0 cursor-pointer" />
+
+                          <input type="range" step="100" x-bind:min="min" x-bind:max="max" x-on:input="maxtrigger"
+                            x-model="maxprice"
+                            class="absolute pointer-events-none appearance-none z-20 h-2 w-full opacity-0 cursor-pointer" />
+
+                          <div class="relative z-10 h-1">
+                            <div class="absolute z-10 inset-0 rounded-md bg-gray-200"></div>
+
+                            <div class="absolute z-20 top-0 bottom-0 rounded-md bg-primary"
+                              x-bind:style="{ 'left': dir === 'ltr' ? minthumb+'%' : maxthumb+'%', 'right': dir === 'ltr' ? maxthumb+'%' : minthumb+'%' }">
+                            </div>
+                            <div
+                              class="absolute z-30 w-5 h-5 top-0 left-0 border-4 bg-white border-primary rounded-full -mt-2 -mr-2"
+                              x-bind:style="{ 'left': dir === 'ltr' ? minthumb+'%' : maxthumb+'%' }"></div>
+                            <div
+                              class="absolute z-30 w-5 h-5 top-0 right-0 border-4 bg-white border-primary rounded-full -mt-2 -mr-4"
+                              x-bind:style="{ 'right': dir === 'ltr' ? maxthumb+'%' : minthumb+'%' }"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-span-1 mb-6 w-full maxlg:col-span-2">
+                      <label for="unit_type" class="block text-xl font-normal mb-3 text-secondary-200">نوع
+                        الوحدة</label>
+                      <div>
+                        <select id="unit_type" name="unit_type"
+                          class="border bg-white border-gray-300 text-secondary-400 font-bold text-sm rounded-lg block w-full p-2.5 focus:border-gray-500 focus:outline-none focus:ring focus:ring-gray-500 focus:ring-opacity-40"
+                          required>
+                          <option selected hidden disabled>نوع الوحدة</option>
+                          <option>شقة</option>
+                          <option>فلل</option>
+                          <option>أراضي</option>
+                          <option>مول</option>
+                        </select>
+                      </div>
+                      <span class="text-red-500 text-sm"></span>
+                    </div>
+                    <div class="flex justify-center items-center col-span-2 maxlg:col-span-4">
+                      <div x-data="range()" x-init="mintrigger(); maxtrigger()" class="relative max-w-xl w-full">
+                        <p class="font-bold text-secondary-800">السعر</p>
+
+                        <div class="flex gap-3 items-center py-2">
+                          <div>
+                            <input type="text" maxlength="5" x-on:input="mintrigger" x-model="minprice" name="min_price"
+                              class="py-2 text-secondary-800/40 rounded w-24 maxlg:w-20" />
+                          </div>
+                          <span class="text-secondary-800/40">-</span>
+                          <div>
+                            <input type="text" maxlength="5" x-on:input="maxtrigger" x-model="maxprice" name="max_price"
+                              class="py-2 text-secondary-800/40 rounded w-24 maxlg:w-20" />
+                          </div>
+                          <span class="text-secondary-800/40"> ج.م</span>
+                        </div>
+                        <div>
+                          <input type="range" step="100" x-bind:min="min" x-bind:max="max" x-on:input="mintrigger"
+                            x-model="minprice"
+                            class="absolute pointer-events-none appearance-none z-20 h-2 w-full opacity-0 cursor-pointer" />
+
+                          <input type="range" step="100" x-bind:min="min" x-bind:max="max" x-on:input="maxtrigger"
+                            x-model="maxprice"
+                            class="absolute pointer-events-none appearance-none z-20 h-2 w-full opacity-0 cursor-pointer" />
+
+                          <div class="relative z-10 h-1">
+                            <div class="absolute z-10 inset-0 rounded-md bg-gray-200"></div>
+                            <div class="absolute z-20 top-0 bottom-0 rounded-md bg-primary"
+                              x-bind:style="{ 'left': dir === 'ltr' ? minthumb+'%' : maxthumb+'%', 'right': dir === 'ltr' ? maxthumb+'%' : minthumb+'%' }">
+                            </div>
+                            <div
+                              class="absolute z-30 w-5 h-5 top-0 left-0 border-4 bg-white border-primary rounded-full -mt-2 -mr-2"
+                              x-bind:style="{ 'left': dir === 'ltr' ? minthumb+'%' : maxthumb+'%' }"></div>
+                            <div
+                              class="absolute z-30 w-5 h-5 top-0 right-0 border-4 bg-white border-primary rounded-full -mt-2 -mr-4"
+                              x-bind:style="{ 'right': dir === 'ltr' ? maxthumb+'%' : minthumb+'%' }"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-span-4 mt-6">
+                      <button type="submit"
+                        class="text-white flex justify-center gap-1 items-center bg-primary w-full lg:w-[137px] font-normal rounded-lg text-base py-2.5 hover:scale-110">
+                        بحث
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+          <!--account-->
+          <div class="w-[41%] relative maxlg:hidden" x-data="{profileDropdown : false}">
+            <a href="profile.html" @click="profileDropdown=!profileDropdown"
+              :class="{ 'hidden': !$isActivePage('/profile.html') }"
+              class="text-white flex justify-center w-fit items-center bg-primary font-normal rounded-full p-1 text-base hover:scale-110">
+              <div class="rounded-full w-9 aspect-square">
+                <img class="rounded-full w-full aspect-square" data-src="../img/NoPath - Copy (6).png" alt="" />
+              </div>
+            </a>
+
+            <button type="button" @click="profileDropdown=!profileDropdown"
+              :class="{ 'hidden': $isActivePage('/profile.html') }"
+              class="text-white flex justify-center gap-2 items-center bg-primary w-full font-normal rounded-lg text-base py-2.5 hover:scale-110">
+              حسابي
+              <i class="fa-solid fa-user"></i>
+            </button>
+            <div x-show="profileDropdown " @click.away="profileDropdown=false"
+              :class="{ 'hidden': $isActivePage('/profile.html') }"
+              class="z-50 absolute font-normal rtl:left-0 ltr:right-0 mt-4 bg-white rounded-lg shadow w-[204px]">
+              <ul class="py-2 text-sm">
+                <li class="text-secondary-700">
+                  <a href="login.html"
+                    class="flex gap-2 text-[17px] font-normal items-center px-6 rounded py-3 border-b hover:bg-primary hover:text-secondary-100">
+                    <i class="fa-solid fa-user"></i>
+                    تسجيل الدخول
+                  </a>
+                </li>
+                <li class="text-secondary-700">
+                  <a href="newaccount.html"
+                    class="flex rounded px-6 font-normal items-center text-[17px] gap-2 py-3 hover:bg-primary hover:text-secondary-100"><i
+                      class="fa-solid fa-user-plus"></i> إنشاء حساب جديد</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!--end of icons ,search ,personal account-->
+
+        <!--logo pic in mobile-->
+        <div class="pl-4 flex justify-end maxlg:w-full xl:hidden items-center pt-1 maxlg:order-3 lg:order-1">
+          <a class="no-underline hover:no-underline flex justify-end" href="index.html"><img class="h-full w-[45px]"
+              data-src="../img/namaa+mv-logo.png" alt="" />
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- navbar ends-->
+  </header>
+  <!--header ends-->
+
+
+
+ <!--top section-->
+    <section class="relative bg-white maxlg:flex maxlg:flex-col ">
+    <div class="absolute maxlg:relative z-40 w-full h-full flex items-end">
+        <div class="w-full flex flex-col relative py-9 container gap-3">
+            <div class="flex gap-4 text-xs  text-secondary-2300">
+                <a href="index.html">
+                <p>الرئيسية</p></a>
+
+                <i class="fa-solid fa-angles-left mt-1"  :class="{'fa-solid fa-angles-left' : dir == 'rtl','fa-solid fa-angles-right' : dir == 'ltr'}"></i>
+                <a href="blog.html">
+                <p>المدونة</p></a>
+                <i class="fa-solid fa-angles-left mt-1" :class="{'fa-solid fa-angles-left' : dir == 'rtl','fa-solid fa-angles-right' : dir == 'ltr'}"></i>
+                <a href="article.html">
+                <p>
+                    معلومات مجلس الوزراء يتوقع نمو سوق العقارات التجارية في مصر 5%
+                </p></a>
+            </div>
+            <div class="w-[65%] maxlg:w-[90%]">
+                <h1 class="text-[40px] maxlg:text-[24px] maxvarysmvarysm:text-[18px] text-secondary-100 maxlg:text-black">
+                    معلومات مجلس الوزراء يتوقع نمو سوق العقارات التجارية في مصر 5%
+                </h1>
+            </div>
+            <div class="flex justify-between maxsm:flex-col gap-3">
+                <div>
+                    <ul
+                        class="flex items-center gap-2 text-xs maxlg:text-[10px] text-secondary-2300 py-2 maxlg:py-1">
+                        <li>
+                            <div class="flex items-center justify-between gap-4 px-3 maxlg:gap-2 maxlg:px-1">
+                                <i class="fa-solid fa-folder text-base maxlg:text-xs"></i>
+                                <span>السوق العقاري</span>
+                            </div>
+                        </li>
+                        <li class="rtl:border-r ltr:border-l">
+                            <div class="flex items-center justify-between gap-4 px-3 maxlg:gap-2 maxlg:px-1">
+                                <i class="fa-solid fa-calendar text-base maxlg:text-xs"></i>
+                                <span>17 أبريل 2018</span>
+                            </div>
+                        </li>
+                        <li class="rtl:border-r ltr:border-l">
+                            <div class="flex items-center justify-between gap-4 px-3 maxlg:gap-2 maxlg:px-1">
+                                <i class="fa-regular fa-clock text-base maxlg:text-xs"></i>
+                                <span>دقيقتان للقراءة</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="flex">
+                    <div
+                        class="flex items-center text-secondary-1100 bg-white maxlg:bg-secondary-1500 rounded-[21px]">
+                        <div
+                            class="bg-secondary-2400 text-secondary-1000 h-full ltr:rounded-l-[21px] rtl:rounded-r-[21px] flex items-center justify-center px-4 maxlg:px-2">
+                            <span class="px-1 text-sm maxlg:text-[10px]">
+                                شارك المقال:</span>
+                        </div>
+                        <div class="flex items-center gap-4  px-5 maxlg:px-2">
+                            <div x-data="{ showTooltip: false }" class="relative flex items-center">
+                                <button onclick="copyToClipboard()">
+                                    <i class="fa-regular fa-paste text-lg maxlg:text-base hover:scale-110"
+                                        @mouseover="showTooltip = true" @mouseout="showTooltip = false"></i>
+                                </button>
+                                <div x-show="showTooltip"
+                                    class="absolute w-max -bottom-10 left-0 p-2 text-xs text-red bg-secondary-1100 rounded-lg shadow-lg z-20 duration-300">
+                                    <div class="z-50 text-white">نسخ الرابط</div>
+                                </div>
+                            </div>
+                            <div x-data="{ showTooltip: false }" class="relative flex items-center">
+                                <a href="javascript:emailCurrentPage()"><i
+                                        class="fa-solid fa-envelope text-lg maxlg:text-base hover:scale-110"
+                                        @mouseover="showTooltip = true" @mouseout="showTooltip = false"></i></a>
+                                <div x-show="showTooltip"
+                                    class="absolute w-max -bottom-10 left-0 p-2 text-xs text-red bg-secondary-1100 rounded-lg shadow-lg z-20 duration-300">
+                                    <div class="z-50 text-white">مشاركة الرابط</div>
+                                </div>
+                            </div>
+                            <div x-data="{ showTooltip: false }" class="relative flex items-center">
+                                <button
+                                    onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(window.location.href), '_blank');">
+                                    <i class="fa-brands fa-facebook text-lg maxlg:text-base hover:scale-110"
+                                        @mouseover="showTooltip = true" @mouseout="showTooltip = false"></i>
+                                </button>
+                                <div x-show="showTooltip"
+                                    class="absolute w-max -bottom-10 left-0 p-2 text-xs text-red bg-secondary-1100 rounded-lg shadow-lg z-20 duration-300">
+                                    <div class="z-50 text-white">مشاركة الرابط</div>
+                                </div>
+                            </div>
+                            <div x-data="{ showTooltip: false }" class="relative flex items-center">
+                                <button
+                                    onclick="window.open('https://twitter.com/intent/tweet?url=' + encodeURIComponent(window.location.href) + '&text=' + encodeURIComponent(document.title), '_blank');">
+                                    <i class="fa-brands fa-twitter text-lg maxlg:text-base hover:scale-110"
+                                        @mouseover="showTooltip = true" @mouseout="showTooltip = false"></i>
+                                </button>
+                                <div x-show="showTooltip"
+                                    class="absolute w-max -bottom-10 left-0 p-2 text-xs text-red bg-secondary-1100 rounded-lg shadow-lg z-20 duration-300">
+                                    <div class="z-50 text-white">مشاركة الرابط</div>
+                                </div>
+                            </div>
+                            <div x-data="{ showTooltip: false }" class="relative flex items-center">
+                                <button
+                                    onclick="window.open('https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(window.location.href), '_blank');">
+                                    <i class="fa-brands fa-linkedin text-lg maxlg:text-base hover:scale-110"
+                                        @mouseover="showTooltip = true" @mouseout="showTooltip = false"></i>
+                                </button>
+                                <div x-show="showTooltip"
+                                    class="absolute w-max -bottom-10 left-0 p-2 text-xs text-red bg-secondary-1100 rounded-lg shadow-lg z-20 duration-300">
+                                    <div class="z-50 text-white">مشاركة الرابط</div>
+                                </div>
+                            </div>
+                            <div x-data="{ showTooltip: false }" class="relative flex items-center">
+                                <button
+                                href="javascript:void(0)" onclick="shareLink()">
+                                    <i class="fa-brands fa-whatsapp text-lg maxlg:text-base hover:scale-110"
+                                        @mouseover="showTooltip = true" @mouseout="showTooltip = false"></i>
+                                </button>
+                                <div x-show="showTooltip"
+                                    class="absolute w-max -bottom-10 left-0 p-2 text-xs text-red bg-secondary-1100 rounded-lg shadow-lg z-20 duration-300">
+                                    <div class="z-50 text-white">مشاركة الرابط</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="relative maxlg:block bg-no-repeat bg-cover bg-center maxmd:rounded-[23px]"
+        style="background-image: url(../img/background\ image.png)">
+        <div class="maxmd:rounded-[23px]">
+
+
+            <div class="flex justify-center z-10 w-full  maxmd:rounded-[23px]">
+                <div class="w-[40%] maxmd:w-[100%]  maxmd:rounded-[23px]  aspect-square">
+                    <img class="w-full aspect-square" data-src="../img/NoPath-2.png" alt="" />
+                </div>
+            </div>
+            <div class="absolute z-10 opacity-40  bg-[#00000099] inset-0 maxmd:rounded-[23px]"></div>
+        </div>
+    </div>
+     </section>
+<!--top section ends-->
+    <section>
+        <article class="container py-[50px] lg:rtl:pl-[30%] lg:ltr:pr-[30%]">
+            <p class="text-base">
+                صعب! معقد! يحتاج الى تركيز كبير! يستنزف مني الوقت! لا أجد ما أكتب؟ .. لا
+                بد أن شيئا من هذه الحالات قد مرت بك كصانع محتوى أو محرر .. لا تقلق ..
+                كتابة المحتوى بشكل أفضل وأسرع لا تحتاج الى كل تلك الحروب والمشاعر. دعنا
+                نتحدث سويا: إذا كنت تحدثت إلى معظم الكتاب، وخاصة المبتدئين، سيقولون إن
+                كتابة المحتوى قد تكون تحديًا. هناك ما هو أكثر من ذلك لإعداد محتوى مكتوب
+                جيدًا بدلاً من تجميع الجمل. يجب أن تعرف أن هناك منهجية ذكية لكتابة
+                المحتوى بشكل أفضل وأسرع. يجب عليك أولا النظر في ما إذا كان محتواك يهدف
+                للإقناع أو التسويق او اثارة نقاش ..الخ. ومهما يكن، يجب أن يكون مفيدًا
+                وجذابًا، أليس كذلك؟ بالتأكيد ، يجب أن تكون النسخة دقيقة ومحفزة للتفكير
+                والتفاعل والإهتمام. ولكن بغض النظر عن ما تقرر أن تتحدث عنه، يجب أن يكون
+                من السهل قراءة ذلك المحتوى و أن يكون مثيراً للاهتمام (ولو لفترة قصيرة).
+                ومع ذلك، فالإحصاءات تثبت أن معظم الجمهور يقومون بمسح عام للمحتوى فقط،
+                معتمدين على النقاط البارزة. مع وضع هذا بعين الاعتبار، يجب أن تكون قابلية
+                القراءة هي هدف أي كاتب. ما هي سهولة القراءة؟ باختصار، هذا يعني أن القراء
+                يجب أن يكونوا منسجمين مع ما يقرؤونه (فقرات مختصرة، كلمات واضحة، سطور
+                بحجم مثالي وهكذا). أي مادة، مكتوبة بشكل سيئ، قد يكلف ذلك خسارة القراء
+                والجمهور. ولكن ماذا لو كان لديك محتوى رائع، ولا أحد يقرأه؟ ما الذي
+                تستطيع القيام به؟
+            </p>
+            <h3 class="text-lg font-bold">
+                كتابة المحتوى بشكل أفضل وأسرع؟ .. نعم من فضلك!
+            </h3>
+            <p class="text-base">
+                صعب! معقد! يحتاج الى تركيز كبير! يستنزف مني الوقت! لا أجد ما أكتب؟ .. لا
+                بد أن شيئا من هذه الحالات قد مرت بك كصانع محتوى أو محرر .. لا تقلق ..
+                كتابة المحتوى بشكل أفضل وأسرع لا تحتاج الى كل تلك الحروب والمشاعر. دعنا
+                نتحدث سويا: إذا كنت تحدثت إلى معظم الكتاب، وخاصة المبتدئين، سيقولون إن
+                كتابة المحتوى قد تكون تحديًا. هناك ما هو أكثر من ذلك لإعداد محتوى مكتوب
+                جيدًا بدلاً من تجميع الجمل. يجب أن تعرف أن هناك منهجية ذكية لكتابة
+                المحتوى بشكل أفضل وأسرع. يجب عليك أولا النظر في ما إذا كان محتواك يهدف
+                للإقناع أو التسويق او اثارة نقاش ..الخ. ومهما يكن، يجب أن يكون مفيدًا
+                وجذابًا، أليس كذلك؟ بالتأكيد ، يجب أن تكون النسخة دقيقة ومحفزة للتفكير
+                والتفاعل والإهتمام. ولكن بغض النظر عن ما تقرر أن تتحدث عنه، يجب أن يكون
+                من السهل قراءة ذلك المحتوى و أن يكون مثيراً للاهتمام (ولو لفترة قصيرة).
+                ومع ذلك، فالإحصاءات تثبت أن معظم الجمهور يقومون بمسح عام للمحتوى فقط،
+                معتمدين على النقاط البارزة. مع وضع هذا بعين الاعتبار، يجب أن تكون قابلية
+                القراءة هي هدف أي كاتب. ما هي سهولة القراءة؟ باختصار، هذا يعني أن القراء
+                يجب أن يكونوا منسجمين مع ما يقرؤونه (فقرات مختصرة، كلمات واضحة، سطور
+                بحجم مثالي وهكذا). أي مادة، مكتوبة بشكل سيئ، قد يكلف ذلك خسارة القراء
+                والجمهور. ولكن ماذا لو كان لديك محتوى رائع، ولا أحد يقرأه؟ ما الذي
+                تستطيع القيام به؟
+            </p>
+        </article>
+    </section>
+    <section class="container bg-secondary-100 pb-8 pt-[50px]">
+        <div class="mb-8">
+          <p class="text-2xl font-bold text-primary">قد يعجبك أيضاً</p>
+        </div>
+        <div class="swiper swiper-news">
+            <div class="swiper-wrapper pb-[40px] pt-[17px]">
+              <div class="swiper-slide rounded-[15px] aspect-square bg-white" style="box-shadow: 0px 10px 30px #0000001a">
+                <div class="col-span-3 md:col-span-1 px-8 maxlg:px-5 pt-8 maxlg:pt-5 pb-4 bg-white rounded-[15px]">
+                  <div class="relative aspect-square rounded-xl">
+                    <a href="# ">
+                      <img class="rounded-[15px] aspect-square w-full" data-src="../img/No1Path - Copy (9).png" alt="" />
+                    </a>
+                    <div class="absolute maxlg:bottom-24 flex justify-between items-center w-full px-5 maxlg:px-3"
+                      style="bottom: 56px">
+                      <div class="">
+                        <button type="button"
+                          class="text-secondary-2000 bg-secondary-1900 font-normal rounded-[9px] text-[13px] maxlg:text-[13px] maxsm:text-[10px] px-5 maxlg:px-2.5 py-2.5 maxxl:px-1 maxlg:py-3">
+                          التسويق العقاري
+                        </button>
+                      </div>
+                    </div>
+  
+                    <div class="mt-3.5 mb-2">
+                      <a href="#">
+                        <p class="text-lg text-center truncate font-normal text-secondary-1000">
+                          صور عقارات أسيوط تواصل الارتفاع وسعر المتر يصل إلى 130
+                          ألف جنيه ولاد البلد
+                        </p>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide rounded-[15px] aspect-square bg-white" style="box-shadow: 0px 10px 30px #0000001a">
+                <div class="col-span-3 md:col-span-1 px-8 maxlg:px-5 pt-8 maxlg:pt-5 pb-4 bg-white rounded-[15px]">
+                  <div class="relative aspect-square rounded-xl">
+                    <a href="# ">
+                      <img class="rounded-[15px] aspect-square w-full" data-src="../img/No1Path - Copy (9).png" alt="" />
+                    </a>
+                    <div class="absolute maxlg:bottom-24 flex justify-between items-center w-full px-5 maxlg:px-3"
+                      style="bottom: 56px">
+                      <div class="">
+                        <button type="button"
+                          class="text-secondary-2000 bg-secondary-1900 font-normal rounded-[9px] text-[13px] maxlg:text-[13px] maxsm:text-[10px] px-5 maxlg:px-2.5 py-2.5 maxxl:px-1 maxlg:py-3">
+                          التسويق العقاري
+                        </button>
+                      </div>
+                    </div>
+  
+                    <div class="mt-3.5 mb-2">
+                      <a href="#">
+                        <p class="text-lg text-center truncate font-normal text-secondary-1000">
+                          صور عقارات أسيوط تواصل الارتفاع وسعر المتر يصل إلى 130
+                          ألف جنيه ولاد البلد
+                        </p>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide rounded-[15px] aspect-square bg-white" style="box-shadow: 0px 10px 30px #0000001a">
+                <div class="col-span-3 md:col-span-1 px-8 maxlg:px-5 pt-8 maxlg:pt-5 pb-4 bg-white rounded-[15px]">
+                  <div class="relative aspect-square rounded-xl">
+                    <a href="# ">
+                      <img class="rounded-[15px] aspect-square w-full" data-src="../img/No1Path - Copy (9).png" alt="" />
+                    </a>
+                    <div class="absolute maxlg:bottom-24 flex justify-between items-center w-full px-5 maxlg:px-3"
+                      style="bottom: 56px">
+                      <div class="">
+                        <button type="button"
+                          class="text-secondary-2000 bg-secondary-1900 font-normal rounded-[9px] text-[13px] maxlg:text-[13px] maxsm:text-[10px] px-5 maxlg:px-2.5 py-2.5 maxxl:px-1 maxlg:py-3">
+                          التسويق العقاري
+                        </button>
+                      </div>
+                    </div>
+  
+                    <div class="mt-3.5 mb-2">
+                      <a href="#">
+                        <p class="text-lg text-center truncate font-normal text-secondary-1000">
+                          صور عقارات أسيوط تواصل الارتفاع وسعر المتر يصل إلى 130
+                          ألف جنيه ولاد البلد
+                        </p>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide rounded-[15px] aspect-square bg-white" style="box-shadow: 0px 10px 30px #0000001a">
+                <div class="col-span-3 md:col-span-1 px-8 maxlg:px-5 pt-8 maxlg:pt-5 pb-4 bg-white rounded-[15px]">
+                  <div class="relative aspect-square rounded-xl">
+                    <a href="# ">
+                      <img class="rounded-[15px] aspect-square w-full" data-src="../img/No1Path - Copy (9).png" alt="" />
+                    </a>
+                    <div class="absolute maxlg:bottom-24 flex justify-between items-center w-full px-5 maxlg:px-3"
+                      style="bottom: 56px">
+                      <div class="">
+                        <button type="button"
+                          class="text-secondary-2000 bg-secondary-1900 font-normal rounded-[9px] text-[13px] maxlg:text-[13px] maxsm:text-[10px] px-5 maxlg:px-2.5 py-2.5 maxxl:px-1 maxlg:py-3">
+                          التسويق العقاري
+                        </button>
+                      </div>
+                    </div>
+  
+                    <div class="mt-3.5 mb-2">
+                      <a href="#">
+                        <p class="text-lg text-center truncate font-normal text-secondary-1000">
+                          صور عقارات أسيوط تواصل الارتفاع وسعر المتر يصل إلى 130
+                          ألف جنيه ولاد البلد
+                        </p>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide rounded-[15px] aspect-square bg-white" style="box-shadow: 0px 10px 30px #0000001a">
+                <div class="col-span-3 md:col-span-1 px-8 maxlg:px-5 pt-8 maxlg:pt-5 pb-4 bg-white rounded-[15px]">
+                  <div class="relative aspect-square rounded-xl">
+                    <a href="# ">
+                      <img class="rounded-[15px] aspect-square w-full" data-src="../img/No1Path - Copy (9).png" alt="" />
+                    </a>
+                    <div class="absolute maxlg:bottom-24 flex justify-between items-center w-full px-5 maxlg:px-3"
+                      style="bottom: 56px">
+                      <div class="">
+                        <button type="button"
+                          class="text-secondary-2000 bg-secondary-1900 font-normal rounded-[9px] text-[13px] maxlg:text-[13px] maxsm:text-[10px] px-5 maxlg:px-2.5 py-2.5 maxxl:px-1 maxlg:py-3">
+                          التسويق العقاري
+                        </button>
+                      </div>
+                    </div>
+  
+                    <div class="mt-3.5 mb-2">
+                      <a href="#">
+                        <p class="text-lg text-center truncate font-normal text-secondary-1000">
+                          صور عقارات أسيوط تواصل الارتفاع وسعر المتر يصل إلى 130
+                          ألف جنيه ولاد البلد
+                        </p>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- navigation buttons -->
+            <!-- <div class="swiper-button-prev fa-solid fa-angle-right text-primary bg-white shadow rounded-lg "></div>
+                      <div class="swiper-button-next fa-solid fa-angle-left text-primary bg-white shadow rounded-lg "></div>
+                       pagination -->
+            <div class="swiper-pagination"></div>
+          </div>
+
+    </section>
+
+  <!--footer start-->
+  <footer>
+    <div class="pt-16 bg-secondary-1500">
+      <div class="lg:flex lg:items-start lg:gap-8 sm:px-6 px-4 lg:px-[70px]">
+        <div class="mt-8 w-full grid grid-cols-3 gap-8 lg:mt-0 lg:grid-cols-6 lg:gap-y-16">
+          <div class="col-span-6 grid w-full grid-cols-7 gap-8 lg:mt-0 px-3">
+            <div class="col-span-7 lg:col-span-2 flex items-center">
+              <div>
+                <h2 class="text-2xl lg:min-w-[235px] maxmd:text-center font-bold text-secondary-1000">
+                  اشترك بالنشرة البريدية
+                </h2>
+              </div>
+            </div>
+
+            <div class="col-span-7 bg-secondary-100 rounded-[10px] lg:col-span-5 lg:flex lg:items-end"
+              style="box-shadow: 0px 5px 15px #1e294d33">
+              <form action="" class="w-full h-full rounded-[10px]">
+                <label for="UserEmail" class="sr-only"> Email </label>
+
+                <div class="h-full border border-gray-100 flex items-center gap-4 rounded-[10px]">
+                  <input type="email" id="email" name="footer_email"
+                    class="bg-secondary-100 text-secondary-1000 text-sm rounded-[10px] block w-full p-2.5 focus:border-gray-500 focus:outline-none focus:ring focus:ring-gray-500 focus:ring-opacity-40"
+                    placeholder="... اكتب بريدك الالكتروني هنا" required />
+
+                  <button type="submit"
+                    class="rounded-[10px] bg-secondary-1000 h-full px-6 py-4 maxmd:py-[9px] text-base font-normal uppercase tracking-wide text-white transition-none mt-0 lg:w-40 flex-shrink-0 hover:scale-110">
+                    اشتراك
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="col-span-6 lg:col-span-3 grid w-full grid-cols-3 gap-8 lg:mt-0 lg:gap-y-16">
+            <div class="col-span-3 flex justify-center sm:col-span-1">
+              <img class="w-[137px] h-[152px]" data-src="../img/Group 40870.png" alt="" />
+            </div>
+
+            <div class="col-span-3 flex-col items-center justify-center maxlg:text-center sm:col-span-2 maxmd:px-20">
+              <ul class="space-y-4 text-sm">
+                <li>
+                  <div class="flex items-center maxmd:flex-col maxmd:justify-center gap-[22px] maxmd:gap-0">
+                    <i class="fa-regular fa-envelope text-primary text-xl font-normal"></i>
+                    <a href=" mailto:info@namaaalkhaleej.com" class="text-[17px] text-secondary-1400 font-normal">
+                      <h2>info@namaaalkhaleej.com</h2>
+                    </a>
+                  </div>
+                </li>
+
+                <li>
+                  <div class="flex items-center maxmd:flex-col maxmd:justify-center gap-[22px] maxmd:gap-0">
+                    <i class="fa-solid fa-phone-flip text-xl text-primary"></i>
+                    <a href="tel:201093744441+" class="text-[17px] text-secondary-1400 font-normal">201093744441+</a>
+                  </div>
+                </li>
+
+                <li>
+                  <div
+                    class="flex items-start maxmd:items-center maxmd:flex-col maxmd:justify-center gap-[22px] maxmd:gap-0">
+                    <i class="fa-solid fa-map-location-dot text-xl text-primary"></i>
+                    <a href="" class="text-[17px] text-secondary-1400 font-normal">احمد اسماعيل علي مدينة السادات محافظة
+                      المنوفية 32865</a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <ul class="col-span-3 flex justify-center lg:justify-start gap-8 maxmd:gap-4 ">
+              <li>
+                <a href="#" rel="noreferrer" target="_blank" class="text-secondary-1100 transition">
+                  <span class="sr-only">youtube</span>
+                  <i class="fa-brands fa-youtube text-3xl maxvarysmvarysm:text-2xl text-secondary-2200 hover:text-primary"></i>
+                </a>
+              </li>
+              <li>
+                <a href="#" rel="noreferrer" target="_blank" class="text-secondary-1100 transition">
+                  <span class="sr-only">behance</span>
+                  <i class="fa-brands fa-behance text-3xl maxvarysmvarysm:text-2xl text-secondary-2200 hover:text-primary hover"></i>
+                </a>
+              </li>
+
+              <li>
+                <a href="#" rel="noreferrer" target="_blank" class="text-secondary-1100 transition">
+                  <span class="sr-only">Facebook</span>
+                  <i class="fa-brands fa-facebook text-3xl maxvarysmvarysm:text-2xl text-secondary-2200 hover:text-primary"></i>
+                </a>
+              </li>
+
+              <li>
+                <a href="#" rel="noreferrer" target="_blank" class="text-secondary-1100 transition">
+                  <span class="sr-only">Twitter</span>
+
+                  <i class="fa-brands fa-twitter text-3xl maxvarysmvarysm:text-2xl text-secondary-2200 hover:text-primary"></i>
+                </a>
+              </li>
+
+              <li>
+                <a href="#" rel="noreferrer" target="_blank" class="text-secondary-1100 transition">
+                  <span class="sr-only">linkedin</span>
+
+                  <i class="fa-brands fa-linkedin text-3xl maxvarysmvarysm:text-2xl text-secondary-2200 hover:text-primary"></i>
+                </a>
+              </li>
+              <li>
+                <a href="#" rel="noreferrer" target="_blank" class="text-secondary-1100 transition">
+                  <span class="sr-only">Instgram</span>
+
+                  <i class="fa-brands fa-instagram text-3xl maxvarysmvarysm:text-2xl text-secondary-2200 hover:text-primary"></i>
+                </a>
+              </li>
+              <li>
+                <a href="#" rel="noreferrer" target="_blank" class="text-secondary-1100 transition">
+                  <span class="sr-only">Tiktok</span>
+
+                  <i class="fa-brands fa-tiktok text-3xl maxvarysmvarysm:text-2xl text-secondary-2200 hover:text-primary"></i>
+                </a>
+              </li>
+              <li>
+                <a href="#" rel="noreferrer" target="_blank" class="text-secondary-1100 transition">
+                  <span class="sr-only">telegram</span>
+
+                  <i class="fa-brands fa-telegram text-3xl maxvarysmvarysm:text-2xl text-secondary-2200 hover:text-primary"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-span-6 lg:col-span-3 grid w-full grid-cols-3 gap-8 lg:mt-0 lg:gap-y-16">
+            <div class="col-span-3 flex-col justify-center items-center maxlg:text-center sm:col-span-1">
+              <p class="font-normal text-secondary-1000 text-xl">
+                روابط مهمة
+              </p>
+
+              <nav aria-label="Footer Navigation - " class="mt-3">
+                <ul class="space-y-3 text-lg maxlg:text-base">
+                  <li>
+                    <a href="index.html" class="text-secondary-1100 text-lg maxlg:text-base transition hover:text-primary">
+                      الرئيسية
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="about_company.html" class="text-secondary-1100 text-lg maxlg:text-base transition hover:text-primary">
+                      عن الشركة
+                    </a>
+                  </li>
+                  <li>
+                    <a href="terms_conditions.html" class="text-secondary-1100 text-lg maxlg:text-base transition hover:text-primary">
+                      الشروط و الأحكام
+                    </a>
+                  </li>
+                  <li>
+                    <a href="privacy_policy.html" class="text-secondary-1100 text-lg maxlg:text-base transition hover:text-primary">
+                      سياسة الخصوصية
+                    </a>
+                  </li>
+                  
+
+                </ul>
+              </nav>
+            </div>
+
+            <div class="col-span-3 flex-col justify-center maxlg:text-center sm:col-span-1">
+              <p class="font-normal text-secondary-1000 text-xl">خدماتنا</p>
+
+              <nav aria-label="Footer Navigation - " class="mt-3">
+                <ul class="space-y-3 text-sm">
+                  <li>
+                    <a href="Photo_gallery.html" class="text-secondary-1100 text-lg maxlg:text-base transition hover:text-primary">
+                      معرض الصور
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="video_gallery.html" class="text-secondary-1100 text-lg maxlg:text-base transition hover:text-primary">
+                      معرض الفديوهات
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="our_projects.html" class="text-secondary-1100 text-lg maxlg:text-base transition hover:text-primary">
+                      مشاريعنا
+                    </a>
+                  </li>
+                  <li>
+                    <a href="blog.html" class="text-secondary-1100 text-lg maxlg:text-base transition hover:text-primary">
+                      المدونة
+                    </a>
+                  </li>
+                  <li>
+                    <a href="category.html" class="text-secondary-1100 text-lg maxlg:text-base transition hover:text-primary">
+                       الوحدات
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+
+            <div class="col-span-3 flex-col justify-center maxlg:text-center sm:col-span-1">
+              <p class="font-normal text-secondary-1000 text-xl">
+                تواصل معنا
+              </p>
+
+              <nav aria-label="Footer Navigation - " class="mt-3">
+                <ul class="space-y-3 text-sm">
+                  <li>
+                    <a href="customer_request.html"
+                      class="text-secondary-1100 text-lg maxlg:text-base transition hover:text-primary">
+                      تقديم طلب
+                    </a>
+                  </li>
+                  <li>
+                    <a href="contact_us.html"
+                      class="text-secondary-1100 text-lg maxlg:text-base transition hover:text-primary">
+                      اتصل بنا
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+
+            <div class="px-8 justify-center lg:justify-end col-span-3 flex gap-6 lg:col-span-3"
+              x-data="{toggleDir() { this.dir = this.dir === 'ltr' ? 'rtl' : 'ltr' }}">
+              <button class="flex text-secondary-1100 hover:text-primary items-center text-2xl gap-[9px] font-normal"
+                x-on:click="toggleDir()">
+                English
+                <i class="fa-solid fa-language text-4xl"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-secondary-100 border-t border-gray-100 pt-3 pb-4 px-6 sm:px-32">
+        <div class="flex maxmd:flex-col maxmd:gap-2 justify-between maxmd:items-center">
+          <p class="text-xs text-center text-gray-500">
+            جميع الحقوق محفوظة لدي نماء الخليج © 2023
+          </p>
+        
+          <nav aria-label="Footer Navigation - Support" class="mt-0">
+            <ul class="flex flex-wrap justify-center gap-4 text-xs lg:justify-end">
+              <li>
+                <a href="https://paymac.net/" class="text-gray-500 transition hover:text-primary">
+                  تدار بواسطة
+                  <span class="text-secondary-1400 font-bold">Paymac</span>
+                  للبرمجيات
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!--footer end-->
+
+    <footer x-data="{toggle1:true,toggle2:false}" class="fixed inset-x-0 bottom-0 p-4 pb-10 z-40 w-20">
+        <div x-show="toggle2"
+            class="relative text-2xl bg-secondary-100 text-primary hover:text-white hover:bg-primary w-14 h-14 flex justify-center items-center rounded-full rtl:mr-2 ltr:ml-2 mb-2 z-[222222]"
+            style="box-shadow: 0px 0px 20px #23418f1a">
+            <a href=""> <i class="fa-brands fa-facebook-messenger"></i></a>
+        </div>
+
+        <a href="">
+            <div x-show="toggle2"
+                class="relative text-2xl bg-secondary-100 text-primary hover:text-white hover:bg-primary w-14 h-14 flex justify-center items-center rounded-full rtl:mr-2 ltr:ml-2 mb-2 z-[222222]"
+                style="box-shadow: 0px 0px 20px #23418f1a">
+                <i class="fa-brands fa-whatsapp text-2xl"></i>
+            </div>
+        </a>
+        <div x-show="toggle2"
+            class="relative text-xl bg-secondary-100 text-primary hover:text-white hover:bg-primary w-14 h-14 flex justify-center items-center rounded-full rtl:mr-2 ltr:ml-2 mb-2 z-[222222]"
+            style="box-shadow: 0px 0px 20px #23418f1a">
+            <a href=""> <i class="fa-solid fa-phone-flip text-lg"></i></a>
+        </div>
+        <div @click="toggle2=!toggle2" x-show="toggle1"
+            class="rounded-full text-2xl bg-secondary-100 text-primary hover:text-white hover:bg-primary w-[60px] h-[60px] rtl:mr-1 ltr:ml-1 flex justify-center items-center z-[222222] cursor-pointer"
+            style="box-shadow: 0px 0px 20px #23418f1a">
+            <i class="fa-solid fa-message" x-show="!toggle2"></i>
+            <i class="fa-solid fa-x" x-show="toggle2"></i>
+        </div>
+        <div @click="topFunction()"
+            class="relative bg-secondary-100 text-primary hover:text-white hover:bg-primary w-7 h-7 flex justify-center items-center rounded-full rtl:mr-5 ltr:ml-5 mt-2 z-[222222] cursor-pointer"
+            style="box-shadow: 0px 0px 20px #23418f1a">
+            <i class="fa-solid fa-angle-up"></i>
+        </div>
+    </footer>
+    <script src="../js/pwajs.js" type="module"></script>
+    <script src="../js/alpine.js"></script>
+  <script src="../js/pwajs.js"></script>
+</body>
+
+</html>

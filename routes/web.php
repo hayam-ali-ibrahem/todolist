@@ -1,5 +1,7 @@
 <?php
 
+use App\Livewire\TodoList;
+use App\Livewire\ShowPosts;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +18,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+ Route::get('/posts', ShowPosts::class);
+// Route::get('/todolist', TodoList::class);

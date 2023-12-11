@@ -1,0 +1,1976 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" x-data="{ dir: 'rtl' }" x-bind:dir="dir" style="overflow-x: hidden;">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Namaa Real Estate</title>
+  <link rel="icon" type="image/x-icon" href="../img/namaa+mv-logo.png" />
+  <link rel="manifest" href="../manifes1t.json" />
+  <link rel="stylesheet" href="../css/main.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <style>
+    input[type="range"]::-webkit-slider-thumb {
+      pointer-events: all;
+      width: 24px;
+      height: 24px;
+      -webkit-appearance: none;
+      /* @apply w-6 h-6 appearance-none pointer-events-auto; */
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/9.3.2/swiper-bundle.css"
+    integrity="sha512-zar81H5lVN36QFsq/da1hxpOLODXK4/oFwBGOFrvdWX6SBe3NWriWTQS6YQDVfW5fDeb2Vry41YQCELOe8cHww=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/9.3.2/swiper-bundle.min.js"
+    integrity="sha512-+z66PuMP/eeemN2MgRhPvI3G15FOBbsp5NcCJBojg6dZBEFL0Zoi0PEGkhjubEcQF7N1EpTX15LZvfuw+Ej95Q=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.12.2/cdn.min.js"
+    integrity="sha512-SnZjbtneeEQiaUki1naQb2pRse3RH9T+diqi+PCwp4IBugV+AQhshDySAon9ak2ohfvk3DubHFAmlq0yneLvFg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
+
+</head>
+
+<body class="scrollbar-hide min-h-screen ">
+  <!--input that control what shows in country code-->
+  <input type="hidden" id="selected_country_value" value="Egypt" />
+
+  <!--page loader-->
+  <div class="bg-white w-screen h-screen z-[91111111111219] fixed top-0 left-0 flex items-center justify-center"
+    id="preloader">
+    <img class="logoPicNav w-[20%] maxsm:w-[70%] maxlg:[50%] mx-auto" data-src="../img/Group 40847.png" alt="" />
+  </div>
+
+  <!--header starts-->
+  <header id="header" class="sticky w-full z-50 top-0" x-data="{sidebar:false }">
+    <!--top section -->
+    <div class="container bg-primary">
+      <div class="w-full flex z-[9999999] items-center justify-between mt-0 h-[39px]">
+        <div class="flex items-center gap-[14px] maxlg:gap-[17px] maxvarysm:gap-2 maxvarysmvarysm:gap-1">
+          <div class="flex items-center gap-[10px] maxvarysmvarysm:gap-1">
+            <i class="fa-regular fa-envelope text-2xl maxsm:text-base text-secondary-100 max"></i>
+            <a href="mailto:info@namaaalkhaleej.com"
+              class="text-secondary-100 font-normal text-[17px] leading-[29px] maxsm:text-[13px] maxvarysm:text-[12px] maxvarysmvarysm:text-[10px]">info@namaaalkhaleej.com</a>
+          </div>
+
+          <div class="flex items-center gap-[10px] maxlg:gap-1 maxvarysmvarysm:gap-[2px]">
+            <i
+              class="fa-solid fa-phone-flip text-lg maxlg:text-sm maxsm:text-[12px] text-secondary-100 ltr:mr-1 rtl:ml-1"></i>
+            <a href="tel:+201093744441"
+              class="text-secondary-100 text-[17px] maxlg:text-sm maxsm:text-[13px] maxvarysm:text-[12px] maxvarysmvarysm:text-[10px]">201093744441+</a>
+            <span class="text-secondary-100 text-xl maxsm:text-base maxvarysm:text-xs font-normal">-</span>
+            <a class="text-secondary-100 text-[17px] maxlg:text-sm maxsm:text-[13px] maxvarysm:text-[12px] maxvarysmvarysm:text-[10px]"
+              href="tel:+201097777724">201097777724+</a>
+          </div>
+        </div>
+        <div class="flex maxlg:hidden items-center gap-8">
+          <div x-data="{toggleDir() { this.dir = this.dir === 'ltr' ? 'rtl' : 'ltr' }}">
+            <button id="dropdownNavbarLink" x-on:click="toggleDir()"
+              class="flex items-center justify-between text-base w-full gap-[14px] font-normal text-secondary-100 hover:scale-110">
+              <!-- <i class="fa-solid fa-angle-down mt-1 text-xl"></i> -->
+              English
+              <i class="fa-solid fa-language text-3xl"></i>
+            </button>
+            <!-- Dropdown menu -->
+            <!-- <div x-show="langDropdown" @click.away="langDropdown=false"
+                  class="z-50 absolute font-normal bg-white rounded-lg shadow w-28">
+                  <ul class="py-2 text-sm ">
+                      <li class="px-2 text-secondary-700">
+                          <a href="#"
+                              class="block px-2 py-2 border-b hover:bg-primary hover:text-secondary-100">Arabic</a>
+                      </li>
+                      <li class="px-2 text-secondary-700">
+                          <a href="#"
+                              class="block px-2 py-2 hover:bg-primary hover:text-secondary-100">French</a>
+                      </li>
+                  </ul>
+              </div> -->
+          </div>
+          <div class="flex gap-6">
+            <a href="#"><i class="fa-brands fa-youtube text-lg text-white hover:scale-110"></i></a>
+            <a href="#"><i class="fa-brands fa-facebook text-lg text-white hover:scale-110"></i></a>
+            <a href="#"><i class="fa-brands fa-linkedin text-lg text-white hover:scale-110"></i></a>
+            <a href="#"><i class="fa-brands fa-twitter text-lg text-white hover:scale-110"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram text-lg text-white hover:scale-110"></i></a>
+            <a href="#"><i class="fa-brands fa-telegram text-lg text-white hover:scale-110"></i></a>
+            <a href="#"><i class="fa-brands fa-tiktok text-lg text-white hover:scale-110"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--end of top section-->
+
+    <!--sidebar-->
+    <div class="fixed w-full h-full inset-0 z-50" id="mobile-menu" x-description="Mobile menu" x-show="sidebar">
+      <div class="flex flex-col rtl:right-0 ltr:left-0 w-80 fixed top-0 bg-white h-full overflow-auto z-30"
+        x-show="sidebar" @click.away="sidebar=false">
+        <div class="mb-auto">
+          <!---->
+          <div class="w-4 relative">
+            <i @click="sidebar = !sidebar"
+              class="fa-solid fa-xmark w-full text-primary absolute top-6 rtl:right-5 ltr:left-5 cursor-pointer"></i>
+          </div>
+
+          <div class="relative mt-[40px] flex justify-center" :class="{ 'hidden': !$isActivePage('/profile.html') }">
+            <a href="profile.html"
+              class="text-white flex justify-center w-fit items-center bg-primary font-normal rounded-full p-1 text-base hover:scale-110">
+              <div class="rounded-full w-14 aspect-square">
+                <img class="rounded-full w-full aspect-square" data-src="../img/NoPath - Copy (6).png" alt="" />
+              </div>
+            </a>
+          </div>
+          <div class="relative flex justify-center mt-[60px]" x-data="{profileDropdown2 : false}"
+            :class="{ 'hidden': $isActivePage('/profile.html') }">
+            <button type="button" @click="profileDropdown2=!profileDropdown2"
+              class="text-white flex justify-center gap-2 items-center bg-primary w-[150px] font-normal rounded-xl text-base py-2.5">
+              حسابي
+
+              <i class="fa-solid fa-user"></i>
+            </button>
+            <div x-show="profileDropdown2" @click.away="profileDropdown2=false"
+              class="z-50 absolute font-normal top-12 border shadow-sm shadow-secondary-1200 mb-1 bg-secondary-100 rounded-lg w-52">
+              <ul class="py-2 rounded-lg text-sm text-secondary-1100 bg-secondary-100">
+                <li class="text-secondary-700 bg-secondary-100">
+                  <a href="login.html"
+                    class="flex gap-2 text-base font-normal items-center bg-secondary-100 px-2 rounded py-2 border-b hover:bg-primary hover:text-secondary-100">
+                    <i class="fa-solid fa-user"></i>
+                    تسجيل الدخول
+                  </a>
+                </li>
+                <li class="text-secondary-700">
+                  <a href="newaccount.html"
+                    class="flex rounded px-2 font-normal items-center bg-secondary-100 text-lg gap-2 py-2 hover:bg-primary hover:text-secondary-100"><i
+                      class="fa-solid fa-user-plus"></i> إنشاء حساب جديد</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!--navigation-->
+          <div class="mt-10 scrollbar-hide">
+            <div class="relative flex-col flex-wrap items-center justify-between px-[40px]">
+              <ul class="w-full grid gap-y-[20px] items-center text-secondary-1100">
+                <li class="min-w-max flex gap-4">
+                  <i class="fa-solid fa-house text-lg"></i>
+                  <a class="inline-block text-base text-secondary-1100 font-normal no-underline"
+                    href="index.html">الرئيسية</a>
+                </li>
+                <li class="min-w-max flex gap-4">
+                  <i class="fa-solid fa-users text-lg"></i>
+                  <a class="inline-block text-base text-secondary-1100 font-normal no-underline"
+                    href="about_company.html">عن الشركة</a>
+                </li>
+                <li class="min-w-max flex gap-4">
+                  <i class="fa-solid fa-photo-film text-lg"></i>
+                  <div x-data="{contactDropdown2:false}">
+                    <button id="dropdownNavbarLink" @click="contactDropdown2=!contactDropdown2"
+                      class="flex items-center text-base w-full gap-1 font-normal">
+                      <span class="text-secondary-1100">المعرض</span>
+                      <i class="fa-solid fa-angle-down mt-2 text-sm"></i>
+                    </button>
+                    <!-- Dropdown menu -->
+
+                    <ul class="text-sm text-secondary-1100 px-4 grid gap-3 mt-5" @click.away="contactDropdown2=false"
+                      x-show="contactDropdown2">
+                      <li class="text-secondary-1100">
+                        <a href="Photo_gallery.html" class="block rounded text-sm font-normal">معرض الصور</a>
+                      </li>
+                      <li class="text-secondary-1100">
+                        <a href="video_gallery.html" class="block rounded text-sm font-normal">معرض الفديوهات</a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                <li class="min-w-max flex gap-4">
+                  <i class="fa-solid fa-building text-lg"></i>
+                  <div x-data="{galleryDropdown2:false}">
+                    <button id="dropdownNavbarLink" @click="galleryDropdown2=!galleryDropdown2"
+                      class="flex items-center text-secondary-1100 text-base w-full gap-1 font-normal">
+                      <span>الاقسام</span>
+
+                      <i class="fa-solid fa-angle-down mt-2 text-sm"></i>
+                    </button>
+                    <!-- Dropdown menu -->
+
+                    <ul class="text-sm text-secondary-1100 px-4 grid gap-3 mt-5" x-show="galleryDropdown2"
+                      @click.away="galleryDropdown2=false">
+                      <li class="text-secondary-1100">
+                        <a href="category.html" class="block text-sm rounded font-normal">شقق</a>
+                      </li>
+                      <li class="text-secondary-1100">
+                        <a href="category.html" class="block text-sm rounded font-normal">فلل</a>
+                      </li>
+                      <li class="text-secondary-1100">
+                        <a href="category.html" class="block text-sm rounded font-normal">أراضي</a>
+                      </li>
+                      <li class="text-secondary-1100">
+                        <a href="category.html" class="block text-sm rounded font-normal">مول</a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+
+                <li class="min-w-max flex gap-4">
+                  <i class="fa-solid fa-city text-lg"></i>
+                  <a class="inline-block text-base text-secondary-1100 font-normal no-underline"
+                    href="our_projects.html">مشاريعنا</a>
+                </li>
+                <li class="min-w-max flex gap-4">
+                  <i class="fa-brands fa-blogger-b text-lg"></i>
+                  <a class="inline-block text-base text-secondary-1100 font-normal no-underline"
+                    href="blog.html">المدونه</a>
+                </li>
+                <li class="min-w-max flex gap-4">
+                  <i class="fa-solid fa-phone text-lg"></i>
+                  <div x-data="{contactDropdown2:false}">
+                    <button id="dropdownNavbarLink" @click="contactDropdown2=!contactDropdown2"
+                      class="flex items-center text-secondary-1100 text-base w-full gap-1 font-normal">
+                      تواصل معانا
+                      <i class="fa-solid fa-angle-down mt-2 text-sm"></i>
+                    </button>
+                    <ul class="text-base text-secondary-1100 px-4 grid gap-3 mt-5" x-show="contactDropdown2"
+                      @click.away="contactDropdown2=false">
+                      <li class="text-secondary-1100">
+                        <a href="contact_us.html" class="block rounded text-sm px-2 font-normal">اتصل بنا</a>
+                      </li>
+                      <li class="text-secondary-1100">
+                        <a href="customer_request.html" class="block rounded text-sm px-2 font-normal">تقديم طلب</a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="grid gap-8 items-center px-14 mt-20">
+            <div class="flex justify-evenly items-center">
+              <div class="relative">
+                <a href="compare.html">
+                  <i class="fa-solid fa-code-compare text-[27px] text-primary"></i></a>
+
+                <div
+                  class="absolute inline-flex items-center justify-center w-7 h-7 top-[-9px] right-[16px] text-[17px] font-normal text-white bg-primary rounded-full">
+                  8
+                </div>
+              </div>
+              <div class="relative">
+                <a href="favorite.html"><i class="fa-regular fa-heart text-[27px] text-primary"></i></a>
+
+                <div
+                  class="absolute flex items-center justify-center w-7 h-7 -top-[7px] right-[16px] text-[16px] font-normal text-white bg-primary rounded-full">
+                  8
+                </div>
+              </div>
+            </div>
+            <div class="grid gap-4">
+              <div class="px-8" x-data="{toggleDir() { this.dir = this.dir === 'ltr' ? 'rtl' : 'ltr' }}">
+                <button id="dropdownNavbarLink" x-on:click="toggleDir()"
+                  class="flex text-secondary-1100 items-center text-2xl w-full gap-[9px] font-normal">
+                  English
+                  <i class="fa-solid fa-language text-4xl"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--end of sidebar-->
+
+    <!-- navbar starts-->
+    <div>
+      <div class="w-full flex bg-secondary-100 items-center lg:gap-[4.2%] mt-0 container h-[65px] maxlg:h-[60px]">
+        <div class="maxlg:block hidden pr-4 order-1">
+          <button id="nav-toggle" @click="sidebar=true"
+            class="flex items-center p-1 text-primary focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+            <i class="fa-solid fa-bars-staggered w-6 h-6"></i>
+          </button>
+        </div>
+        <!--logo pic for pc-->
+        <div class="flex min-w-max maxxl:hidden items-center py-[5px] order-1">
+          <a class="no-underline hover:no-underline" href="index.html"><img class="!h-[51px] !w-[217px]"
+              data-src="../img/Group 41310@2x.png" alt="" />
+          </a>
+        </div>
+        <!--page nav names starts-->
+        <div
+          class="flex-grow lg:flex lg:items-center lg:w-auto maxlg:hidden lg:mt-0 bg-secondary-100 lg:bg-transparent text-secondary-200 z-20 order-2"
+          id="nav-content">
+          <ul class="lg:flex gap-[14px] items-center text-secondary-1100">
+            <li class="min-w-max" :class="{ 'active-header': $isActivePage('/index.html') }">
+              <a class="inline-block text-base font-normal no-underline py-5 hover:text-primary"
+                href="index.html">الرئيسية</a>
+            </li>
+            <li class="min-w-max" :class="{ 'active-header': $isActivePage('/about_company.html') }">
+              <a class="inline-block text-base py-5 font-normal no-underline hover:text-primary"
+                href="about_company.html">عن الشركة</a>
+            </li>
+            <li class="min-w-max">
+              <div x-data="{contactDropdown:false}"
+                :class="[$isActivePage('/video_gallery.html') || $isActivePage('/Photo_gallery.html') ? 'active-header' : '']">
+                <button id="dropdownNavbarLink" @click="contactDropdown=!contactDropdown"
+                  class="flex items-center py-5 text-secondary-1100 justify-between text-[16px] leading-[22px] w-full gap-[5px] font-normal hover:text-primary">
+                  <span>المعرض</span>
+                  <i class="fa-solid fa-angle-down text-[11px] leading-none"></i>
+                </button>
+                <!-- Dropdown menu -->
+                <div x-show="contactDropdown" @click.away="contactDropdown=false"
+                  class="z-50 absolute font-normal bg-white rounded-xl shadow w-[195px]">
+                  <ul class="py-2 text-sm">
+                    <li class="text-secondary-700">
+                      <a href="Photo_gallery.html"
+                        class="block rounded text-secondary-700 text-[17px] rtl:pr-9 ltr:pl-9 py-2 border-b font-normal hover:bg-primary hover:text-secondary-100">معرض
+                        الصور</a>
+                    </li>
+                    <li class="text-secondary-700">
+                      <a href="video_gallery.html"
+                        class="block rounded text-[17px] rtl:pr-9 ltr:pl-9 py-2 font-normal hover:bg-primary hover:text-secondary-100">معرض
+                        الفديوهات</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li class="min-w-max">
+              <div x-data="{galleryDropdown:false}">
+                <button id="dropdownNavbarLink" @click="galleryDropdown=!galleryDropdown"
+                  class="flex items-center py-5 justify-between text-base w-full gap-[5px] font-normal hover:text-primary"
+                  :class="{ 'active-header': $isActivePage('/category.html') }">
+                  <span>الاقسام</span>
+
+                  <i class="fa-solid fa-angle-down text-xs"></i>
+                </button>
+                <!-- Dropdown menu -->
+                <div x-show="galleryDropdown" @click.away="galleryDropdown=false"
+                  class="z-50 absolute font-normal bg-white rounded-lg shadow w-48">
+                  <ul class="py-2 text-sm text-secondary-700">
+                    <li class="text-secondary-700">
+                      <a href="category.html"
+                        class="block text-lg rtl:pr-9 ltr:pl-9 py-2 border-b rounded font-normal hover:bg-primary hover:text-secondary-100">شقق</a>
+                    </li>
+                    <li class="text-secondary-700">
+                      <a href="category.html"
+                        class="block rtl:pr-9 ltr:pl-9 text-lg py-2 border-b rounded font-normal hover:bg-primary hover:text-secondary-100">فلل</a>
+                    </li>
+                    <li class="text-secondary-700">
+                      <a href="category.html"
+                        class="block text-lg rtl:pr-9 ltr:pl-9 py-2 border-b rounded font-normal hover:bg-primary hover:text-secondary-100">أراضي</a>
+                    </li>
+                    <li class="text-secondary-700">
+                      <a href="category.html"
+                        class="block text-lg rtl:pr-9 ltr:pl-9 py-2 rounded font-normal hover:bg-primary hover:text-secondary-100">مول</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+
+            <li class="min-w-max">
+              <a class="inline-block text-base py-5 font-normal no-underline hover:text-primary"
+                :class="{ 'active-header': $isActivePage('/our_projects.html') }" href="our_projects.html">مشاريعنا</a>
+            </li>
+            <li class="min-w-max">
+              <a class="inline-block text-base py-5 font-normal no-underline hover:text-primary"
+                :class="{ 'active-header': $isActivePage('/blog.html') }" href="blog.html">المدونه</a>
+            </li>
+            <li class="min-w-max"
+              :class="[$isActivePage('/contact_us.html') || $isActivePage('/customer_request.html') ? 'active-header' : '']">
+              <div x-data="{contactDropdown:false}">
+                <button id="dropdownNavbarLink" @click="contactDropdown=!contactDropdown"
+                  class="flex items-center justify-between py-5 text-base w-full gap-1 font-normal hover:text-primary">
+                  <span>تواصل معانا</span>
+                  <i class="fa-solid fa-angle-down text-xs"></i>
+                </button>
+                <!-- Dropdown menu -->
+                <div x-show="contactDropdown" @click.away="contactDropdown=false"
+                  class="z-50 absolute font-normal bg-white rounded-lg shadow w-48">
+                  <ul class="py-2 text-base">
+                    <li class="text-secondary-700">
+                      <a href="contact_us.html"
+                        class="block rounded text-[17px] rtl:pr-9 ltr:pl-9 py-2 border-b font-normal hover:bg-primary hover:text-secondary-100">اتصل
+                        بنا</a>
+                    </li>
+                    <li class="text-secondary-700">
+                      <a href="customer_request.html"
+                        class="block rounded text-[17px] rtl:pr-9 ltr:pl-9 py-2 hover:bg-primary font-normal hover:text-secondary-100">تقديم
+                        طلب</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <!--page nav names ends-->
+
+        <!--icons ,search ,personal account -->
+        <div class="flex w-[22%] gap-[11%] justify-center items-center maxlg:order-2 lg:order-3">
+          <div class="w-[49%] gap-[22%] maxxl:gap-[18%] items-center flex">
+            <div class="relative maxlg:hidden">
+              <a href="compare.html">
+                <i class="fa-solid fa-code-compare text-2xl text-primary font-bold hover:scale-110"></i></a>
+
+              <div
+                class="absolute inline-flex items-center px-1 justify-center w-6 h-6 right-4 -top-1 text-[14px] font-bold text-white bg-primary rounded-full">
+                4
+              </div>
+            </div>
+            <div class="relative maxlg:hidden">
+              <a href="favorite.html">
+                <i class="fa-regular fa-heart text-[27px] text-primary hover:scale-110"></i>
+              </a>
+              <div
+                class="absolute inline-flex items-center px-1 justify-center w-6 h-6 right-4 -top-1 text-[14px] font-bold text-white bg-primary rounded-full">
+                12
+              </div>
+            </div>
+            <!--search button and dropdown-->
+            <div class="inline-block text-xl relative text-primary" x-data="{searchDropdown:false,search:false}">
+              <button @click="searchDropdown=!searchDropdown">
+                <i
+                  class="fa-solid fa-magnifying-glass text-[26px] text-primary maxlg:ltr:ml-3 maxlg:rtl:mr-3 hover:scale-110"></i>
+              </button>
+
+              <form x-show="searchDropdown"
+                class="maxlg:fixed maxlg:inset-0 maxlg:w-screen maxlg:h-screen maxlg:flex maxlg:items-start maxlg:justify-center maxlg:overflow-auto maxlg:px-[100px] shadow-2xl maxlg:bg-[#23418F] maxlg:bg-opacity-30"
+                action="category.html" method="get">
+                <div x-data="{advancedSearchDropdown:false}" @click.away="searchDropdown=false"
+                  class="z-40 absolute lg:top-12 rtl:pl-[12px] border ltr:pr-[12px] ltr:pl-[21px] rtl:pr-[21px] py-3 flex flex-col items-center font-normal bg-white lg:ltr:right-0 lg:rtl:left-0 rounded-xl gap-[6px] maxlg:w-auto maxlg:min-w-fit maxlg:mt-9 maxlg:mx-auto">
+                  <div class="flex items-center font-normal gap-[6px]">
+                    <div class="relative lg:w-[588px]">
+                      <button id="search-btn" type="button"
+                        class="absolute inset-y-0 ltr:right-3 rtl:left-3 flex items-center" disabled>
+                        <i class="fa-solid fa-magnifying-glass text-xl hover:scale-110"></i>
+                      </button>
+
+                      <input type="search" name="search_id" id="search-input"
+                        class="appearance-none w-full px-2 py-1 text-secondary-1100 bg-white border rounded-md focus:border-gray-500 focus:outline-none focus:ring focus:ring-gray-500 focus:ring-opacity-40"
+                        placeholder="Search" required />
+                    </div>
+                    <div>
+                      <button @click="advancedSearchDropdown=!advancedSearchDropdown" type="button"
+                        class="text-white flex justify-center gap-1 items-center bg-primary w-[137px] font-normal rounded-lg text-base py-2.5 hover:scale-110">
+                        بحث متقدم <i class="fa-solid fa-angle-down mt-1"></i>
+                      </button>
+                    </div>
+                  </div>
+                  <div x-show="advancedSearchDropdown" class="grid gap-2 grid-cols-4 w-full">
+                    <div class="flex flex-col maxlg:w-full col-span-2 maxlg:col-span-4">
+                      <label for="PurchasedDate" class="block text-xl mb-3 font-normal text-secondary-800">الدولة
+                      </label>
+                      <div class="w-full flex flex-col items-center">
+                        <div class="w-full">
+                          <div x-data="selectConfigs()" x-init="fetchOptions()"
+                            class="flex flex-col items-center relative">
+                            <div class="w-full">
+                              <div @click.away="close()" class="p-1 bg-white flex border border-gray-200 rounded-md">
+                                <input x-model="filter" name="country_id"
+                                  x-transition:leave="transition ease-in duration-100"
+                                  x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0"
+                                  @mousedown="open()" @keydown.enter.stop.prevent="selectOption()"
+                                  @keydown.arrow-up.prevent="focusPrevOption()"
+                                  @keydown.arrow-down.prevent="focusNextOption()"
+                                  class="px-2 appearance-none outline-none w-full placeholder:text-sm placeholder:text-secondary-900"
+                                  placeholder="قم بإختيار الدولة" required />
+                                <div class="flex w-6 justify-center items-center">
+                                  <i class="fa fa-angle-down text-secondary-800/40" @mousedown="toggle()"></i>
+                                </div>
+                              </div>
+                            </div>
+                            <div x-show="isOpen()"
+                              class="absolute shadow bg-white mt-12 text-sm z-40 w-full lef-0 rounded max-h-select overflow-y-auto svelte-5uyqqj">
+                              <div class="flex flex-col w-full">
+                                <template x-for="(option, index) in filteredOptions()" :key="index">
+                                  <div @click="onOptionClick(index)" :class="classOption(option.login.uuid, index)"
+                                    :aria-selected="focusedOptionIndex === index">
+                                    <div
+                                      class="flex w-full items-center p-2 pl-2 border-transparent border-l-2 relative hover:border-primary">
+                                      <div class="w-full items-center flex">
+                                        <div class="mx-2 -mt-1">
+                                          <span x-text="option.name.first + ' ' + option.name.last"></span>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </template>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="flex flex-col maxlg:w-full col-span-2 maxlg:col-span-4">
+                      <label for="PurchasedDate" class="block text-xl mb-3 font-normal text-secondary-800">المشروع
+                      </label>
+                      <div class="w-full flex flex-col items-center">
+                        <div class="w-full">
+                          <div x-data="selectConfigs()" x-init="fetchOptions()"
+                            class="flex flex-col items-center relative">
+                            <div class="w-full">
+                              <div @click.away="close()" class="p-1 bg-white flex border border-gray-200 rounded-md">
+                                <input x-model="filter" name="project_id"
+                                  x-transition:leave="transition ease-in duration-100"
+                                  x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0"
+                                  @mousedown="open()" @keydown.enter.stop.prevent="selectOption()"
+                                  @keydown.arrow-up.prevent="focusPrevOption()"
+                                  @keydown.arrow-down.prevent="focusNextOption()"
+                                  class="px-2 appearance-none outline-none w-full placeholder:text-sm placeholder:text-secondary-900"
+                                  placeholder="قم بإختيار المشروع" required />
+                                <div class="flex w-6 justify-center items-center">
+                                  <i class="fa fa-angle-down text-secondary-800/40" @mousedown="toggle()"></i>
+                                </div>
+                              </div>
+                            </div>
+                            <div x-show="isOpen()"
+                              class="absolute shadow bg-white mt-12 text-sm z-40 w-full lef-0 rounded max-h-select overflow-y-auto svelte-5uyqqj">
+                              <div class="flex flex-col w-full">
+                                <template x-for="(option, index) in filteredOptions()" :key="index">
+                                  <div @click="onOptionClick(index)" :class="classOption(option.login.uuid, index)"
+                                    :aria-selected="focusedOptionIndex === index">
+                                    <div
+                                      class="flex w-full items-center p-2 pl-2 border-transparent border-l-2 relative hover:border-primary">
+                                      <div class="w-full items-center flex">
+                                        <div class="mx-2 -mt-1">
+                                          <span x-text="option.name.first + ' ' + option.name.last"></span>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </template>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="flex justify-center w-full col-span-1 maxlg:col-span-2">
+                      <div x-data="range2()" x-init="mintrigger(); maxtrigger()" class="relative max-w-xl w-full">
+                        <p
+                          class="block text-[13px] rtl:text-right ltr:text-left text-base font-normal text-secondary-800">
+                          المساحة
+                        </p>
+                        <div class="flex gap-1 items-center py-2">
+                          <div>
+                            <input type="text" maxlength="5" x-on:input="mintrigger" x-model="minprice"
+                              class="text-secondary-800/40 rounded w-12" />
+                          </div>
+                          <span class="text-secondary-800/40">-</span>
+                          <div>
+                            <input type="text" maxlength="5" x-on:input="maxtrigger2" x-model="maxprice"
+                              class="text-secondary-800/40 rounded w-12" />
+                          </div>
+                        </div>
+                        <div>
+                          <input type="range" step="100" x-bind:min="min" x-bind:max="max" x-on:input="mintrigger"
+                            x-model="minprice"
+                            class="absolute pointer-events-none appearance-none z-20 h-2 w-full opacity-0 cursor-pointer" />
+
+                          <input type="range" step="100" x-bind:min="min" x-bind:max="max" x-on:input="maxtrigger"
+                            x-model="maxprice"
+                            class="absolute pointer-events-none appearance-none z-20 h-2 w-full opacity-0 cursor-pointer" />
+
+                          <div class="relative z-10 h-1">
+                            <div class="absolute z-10 inset-0 rounded-md bg-gray-200"></div>
+
+                            <div class="absolute z-20 top-0 bottom-0 rounded-md bg-primary"
+                              x-bind:style="{ 'left': dir === 'ltr' ? minthumb+'%' : maxthumb+'%', 'right': dir === 'ltr' ? maxthumb+'%' : minthumb+'%' }">
+                            </div>
+                            <div
+                              class="absolute z-30 w-5 h-5 top-0 left-0 border-4 bg-white border-primary rounded-full -mt-2 -mr-2"
+                              x-bind:style="{ 'left': dir === 'ltr' ? minthumb+'%' : maxthumb+'%' }"></div>
+                            <div
+                              class="absolute z-30 w-5 h-5 top-0 right-0 border-4 bg-white border-primary rounded-full -mt-2 -mr-4"
+                              x-bind:style="{ 'right': dir === 'ltr' ? maxthumb+'%' : minthumb+'%' }"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-span-1 mb-6 w-full maxlg:col-span-2">
+                      <label for="unit_type"
+                        class="block text-base maxxl:text-sm font-normal mb-3 text-secondary-200">نوع الوحدة</label>
+                      <div>
+                        <select id="unit_type" name="unit_type"
+                          class="border bg-white border-gray-300 text-secondary-400 font-bold text-sm rounded-lg block w-full p-2.5 focus:border-gray-500 focus:outline-none focus:ring focus:ring-gray-500 focus:ring-opacity-40"
+                          required>
+                          <option selected hidden disabled>نوع الوحدة</option>
+                          <option>شقة</option>
+                          <option>فلل</option>
+                          <option>أراضي</option>
+                          <option>مول</option>
+                        </select>
+                      </div>
+                      <span class="text-red-500 text-sm"></span>
+                    </div>
+                    <div class="flex justify-center items-center col-span-2 maxlg:col-span-4">
+                      <div x-data="range()" x-init="mintrigger(); maxtrigger()" class="relative max-w-xl w-full">
+                        <p class="font-bold text-secondary-800">السعر</p>
+
+                        <div class="flex gap-3 items-center py-2">
+                          <div>
+                            <input type="text" maxlength="5" x-on:input="mintrigger" x-model="minprice" name="min_price"
+                              class="py-2 text-secondary-800/40 rounded w-24 maxlg:w-20" />
+                          </div>
+                          <span class="text-secondary-800/40">-</span>
+                          <div>
+                            <input type="text" maxlength="5" x-on:input="maxtrigger" x-model="maxprice" name="max_price"
+                              class="py-2 text-secondary-800/40 rounded w-24 maxlg:w-20" />
+                          </div>
+                          <span class="text-secondary-800/40"> ج.م</span>
+                        </div>
+                        <div>
+                          <input type="range" step="100" x-bind:min="min" x-bind:max="max" x-on:input="mintrigger"
+                            x-model="minprice"
+                            class="absolute pointer-events-none appearance-none z-20 h-2 w-full opacity-0 cursor-pointer" />
+
+                          <input type="range" step="100" x-bind:min="min" x-bind:max="max" x-on:input="maxtrigger"
+                            x-model="maxprice"
+                            class="absolute pointer-events-none appearance-none z-20 h-2 w-full opacity-0 cursor-pointer" />
+
+                          <div class="relative z-10 h-1">
+                            <div class="absolute z-10 inset-0 rounded-md bg-gray-200"></div>
+                            <div class="absolute z-20 top-0 bottom-0 rounded-md bg-primary"
+                              x-bind:style="{ 'left': dir === 'ltr' ? minthumb+'%' : maxthumb+'%', 'right': dir === 'ltr' ? maxthumb+'%' : minthumb+'%' }">
+                            </div>
+                            <div
+                              class="absolute z-30 w-5 h-5 top-0 left-0 border-4 bg-white border-primary rounded-full -mt-2 -mr-2"
+                              x-bind:style="{ 'left': dir === 'ltr' ? minthumb+'%' : maxthumb+'%' }"></div>
+                            <div
+                              class="absolute z-30 w-5 h-5 top-0 right-0 border-4 bg-white border-primary rounded-full -mt-2 -mr-4"
+                              x-bind:style="{ 'right': dir === 'ltr' ? maxthumb+'%' : minthumb+'%' }"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-span-4 mt-6">
+                      <button type="submit"
+                        class="text-white flex justify-center gap-1 items-center bg-primary w-full lg:w-[137px] font-normal rounded-lg text-base py-2.5 hover:scale-110">
+                        بحث
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+          <!--account-->
+          <div class="w-[41%] relative maxlg:hidden" x-data="{profileDropdown : false}">
+            <a href="profile.html" @click="profileDropdown=!profileDropdown"
+              :class="{ 'hidden': !$isActivePage('/profile.html') }"
+              class="text-white flex justify-center w-fit items-center bg-primary font-normal rounded-full p-1 text-base hover:scale-110">
+              <div class="rounded-full w-9 aspect-square">
+                <img class="rounded-full w-full aspect-square" data-src="../img/NoPath - Copy (6).png" alt="" />
+              </div>
+            </a>
+
+            <button type="button" @click="profileDropdown=!profileDropdown"
+              :class="{ 'hidden': $isActivePage('/profile.html') }"
+              class="text-white flex justify-center gap-2 items-center bg-primary w-full font-normal rounded-lg text-base py-2.5 hover:scale-110">
+              حسابي
+              <i class="fa-solid fa-user"></i>
+            </button>
+            <div x-show="profileDropdown " @click.away="profileDropdown=false"
+              :class="{ 'hidden': $isActivePage('/profile.html') }"
+              class="z-50 absolute font-normal rtl:left-0 ltr:right-0 mt-4 bg-white rounded-lg shadow w-[204px]">
+              <ul class="py-2 text-sm">
+                <li class="text-secondary-700">
+                  <a href="login.html"
+                    class="flex gap-2 text-[17px] font-normal items-center px-6 rounded py-3 border-b hover:bg-primary hover:text-secondary-100">
+                    <i class="fa-solid fa-user"></i>
+                    تسجيل الدخول
+                  </a>
+                </li>
+                <li class="text-secondary-700">
+                  <a href="newaccount.html"
+                    class="flex rounded px-6 font-normal items-center text-[17px] gap-2 py-3 hover:bg-primary hover:text-secondary-100"><i
+                      class="fa-solid fa-user-plus"></i> إنشاء حساب جديد</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!--end of icons ,search ,personal account-->
+
+        <!--logo pic in mobile-->
+        <div class="pl-4 flex justify-end maxlg:w-full xl:hidden items-center pt-1 maxlg:order-3 lg:order-1">
+          <a class="no-underline hover:no-underline flex justify-end" href="index.html"><img class="h-full w-[45px]"
+              data-src="../img/namaa+mv-logo.png" alt="" />
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- navbar ends-->
+  </header>
+  <!--header ends-->
+
+  <!--page section-->
+  <section class="bg-secondary-100 maxlg:bg-secondary-1500 pt-8 flex flex-col gap-3 maxlg:gap-6"
+    x-data="{filter : false}" @load.window="
+    width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
+    if (width > 1023) {filter = true}">
+    <!-- <div class="flex justify-end maxlg:hidden container ">
+            <form action=" " class="flex gap-[20px] w-[90%]">
+                <div class="flex flex-col w-[20%]">
+                    <label for="PurchasedDate" class="block text-[15px] mb-3 font-bold text-secondary-200">الدولة
+                    </label>
+                    <div class="w-full flex flex-col items-center">
+                        <div class="w-full">
+                            <div x-data="selectConfigs()" x-init="fetchOptions()"
+                                class="flex flex-col items-center relative">
+                                <div class="w-full">
+                                    <div @click.away="close()"
+                                        class="p-1 bg-white flex border border-[#C4C4C4] rounded-md">
+                                        <input x-model="filter" name="country_id"
+                                            x-transition:leave="transition ease-in duration-100"
+                                            x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0"
+                                            @mousedown="open()" @keydown.enter.stop.prevent="selectOption()"
+                                            @keydown.arrow-up.prevent="focusPrevOption()"
+                                            @keydown.arrow-down.prevent="focusNextOption()"
+                                            class="px-2 py-1 appearance-none outline-none w-full placeholder:text-sm placeholder:text-secondary-900"
+                                            placeholder="قم بإختيار الدولة" required />
+                                        <div class="flex w-6 justify-center items-center">
+                                            <i class="fa fa-angle-down text-secondary-800/40" @mousedown="toggle()"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div x-show="isOpen()"
+                                    class="absolute shadow bg-white mt-12 text-sm z-40 w-full lef-0 rounded max-h-select overflow-y-auto svelte-5uyqqj">
+                                    <div class="flex flex-col w-full">
+                                        <template x-for="(option, index) in filteredOptions()" :key="index">
+                                            <div @click="onOptionClick(index)"
+                                                :class="classOption(option.login.uuid, index)"
+                                                :aria-selected="focusedOptionIndex === index">
+                                                <div
+                                                    class="flex w-full items-center p-2 pl-2 border-transparent border-l-2 relative hover:border-primary">
+                                                    <div class="w-full items-center flex">
+                                                        <div class="mx-2 -mt-1">
+                                                            <span
+                                                                x-text="option.name.first + ' ' + option.name.last"></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </template>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex flex-col w-[20%] col-span-1">
+                    <label for="PurchasedDate" class="block text-[15px] mb-3 font-bold text-secondary-200">المشروع
+                    </label>
+                    <div class="w-full flex flex-col items-center">
+                        <div class="w-full">
+                            <div x-data="selectConfigs()" x-init="fetchOptions()"
+                                class="flex flex-col items-center relative">
+                                <div class="w-full">
+                                    <div @click.away="close()"
+                                        class="p-1 bg-white flex border border-[#C4C4C4] rounded-md">
+                                        <input x-model="filter" name="project_id"
+                                            x-transition:leave="transition ease-in duration-100"
+                                            x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0"
+                                            @mousedown="open()" @keydown.enter.stop.prevent="selectOption()"
+                                            @keydown.arrow-up.prevent="focusPrevOption()"
+                                            @keydown.arrow-down.prevent="focusNextOption()"
+                                            class="px-2 py-1 appearance-none outline-none w-full placeholder:text-sm placeholder:text-secondary-900"
+                                            placeholder="قم بإختيار المشروع" required />
+                                        <div class="flex w-6 justify-center items-center">
+                                            <i class="fa fa-angle-down text-secondary-800/40" @mousedown="toggle()"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div x-show="isOpen()"
+                                    class="absolute shadow bg-white mt-12 text-sm z-40 w-full lef-0 rounded max-h-select overflow-y-auto svelte-5uyqqj">
+                                    <div class="flex flex-col w-full">
+                                        <template x-for="(option, index) in filteredOptions()" :key="index">
+                                            <div @click="onOptionClick(index)"
+                                                :class="classOption(option.login.uuid, index)"
+                                                :aria-selected="focusedOptionIndex === index">
+                                                <div
+                                                    class="flex w-full items-center p-2 pl-2 border-transparent border-l-2 relative hover:border-primary">
+                                                    <div class="w-full items-center flex">
+                                                        <div class="mx-2 -mt-1">
+                                                            <span
+                                                                x-text="option.name.first + ' ' + option.name.last"></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </template>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-span-1 w-[20%]">
+                    <label for="unit_type" class="block text-[15px] mb-3 font-bold text-secondary-200">نوع الوحدة</label>
+                    <div>
+                        <select id="unit_type" name="unit_type"
+                            class="border bg-white border-[#C4C4C4] text-secondary-400 font-bold text-sm rounded-lg block w-full p-2.5 focus:border-gray-500 focus:outline-none focus:ring focus:ring-gray-500 focus:ring-opacity-40"
+                            required>
+                            <option selected hidden disabled>نوع الوحدة</option>
+                            <option>شقة</option>
+                            <option>فلل</option>
+                            <option>أراضي</option>
+                            <option>مول</option>
+                        </select>
+                    </div>
+                    <span class="text-red-500 text-sm"></span>
+                </div>
+                <div class="flex justify-center w-[20%] px-2 col-span-1">
+                   
+                    <div x-data="range2()" x-init="mintrigger(); maxtrigger()" class="relative max-w-xl w-full">
+                        <p class="block text-[15px] mb-3 font-bold text-secondary-200">
+                            المساحة
+                        </p>
+                        <div class="flex gap-1 items-center pb-2">
+                            <div>
+                                <input type="text" maxlength="5" x-on:input="mintrigger" x-model="minprice"
+                                    class="text-secondary-800/40 rounded w-12" />
+                            </div>
+                            <span class="text-secondary-800/40">-</span>
+                            <div>
+                                <input type="text" maxlength="5" x-on:input="maxtrigger2" x-model="maxprice"
+                                    class="text-secondary-800/40 rounded w-12" />
+                            </div>
+                            <span class="text-secondary-800/40">م</span>
+                        </div>
+                        <div>
+                            <input type="range" step="100" x-bind:min="min" x-bind:max="max" x-on:input="mintrigger"
+                                x-model="minprice"
+                                class="absolute pointer-events-none appearance-none z-20 h-2 w-full opacity-0 cursor-pointer" />
+
+                            <input type="range" step="100" x-bind:min="min" x-bind:max="max" x-on:input="maxtrigger"
+                                x-model="maxprice"
+                                class="absolute pointer-events-none appearance-none z-20 h-2 w-full opacity-0 cursor-pointer" />
+
+                            <div class="relative z-10 h-1">
+                                <div class="absolute z-10 inset-0 rounded-md bg-gray-200"></div>
+
+                                <div class="absolute z-20 top-0 bottom-0 rounded-md bg-primary"
+                                    x-bind:style="{ 'left': dir === 'ltr' ? minthumb+'%' : maxthumb+'%', 'right': dir === 'ltr' ? maxthumb+'%' : minthumb+'%' }">
+                                </div>
+                                <div class="absolute z-30 w-5 h-5 top-0 left-0 border-4 bg-white border-primary rounded-full -mt-2 -mr-2"
+                                    x-bind:style="{ 'left': dir === 'ltr' ? minthumb+'%' : maxthumb+'%' }"></div>
+                                <div class="absolute z-30 w-5 h-5 top-0 right-0 border-4 bg-white border-primary rounded-full -mt-2 -mr-4"
+                                    x-bind:style="{ 'right': dir === 'ltr' ? maxthumb+'%' : minthumb+'%' }"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex justify-center w-[20%] px-2 col-span-1">
+                    <div x-data="range()" x-init="mintrigger(); maxtrigger()" class="relative max-w-xl w-full">
+                        <p class="block text-[15px] mb-3 font-bold text-secondary-200">
+                            السعر
+                        </p>
+
+                        <div class="flex gap-2 items-center pb-2">
+                            <div>
+                                <input type="text" maxlength="5" x-on:input="mintrigger" x-model="minprice"
+                                    name="min_price" class="text-secondary-800/40 rounded w-[60px]" />
+                            </div>
+                            <span class="text-secondary-800/40">-</span>
+                            <div>
+                                <input type="text" maxlength="5" x-on:input="maxtrigger" x-model="maxprice"
+                                    name="max_price" class="text-secondary-800/40 rounded w-[64px]" />
+                            </div>
+                            <span class="text-secondary-800/40"> ج.م</span>
+                        </div>
+                        <div>
+                            <input type="range" step="100" x-bind:min="min" x-bind:max="max" x-on:input="mintrigger"
+                                x-model="minprice"
+                                class="absolute pointer-events-none appearance-none z-20 h-2 w-full opacity-0 cursor-pointer" />
+
+                            <input type="range" step="100" x-bind:min="min" x-bind:max="max" x-on:input="maxtrigger"
+                                x-model="maxprice"
+                                class="absolute pointer-events-none appearance-none z-20 h-2 w-full opacity-0 cursor-pointer" />
+
+                            <div class="relative z-10 h-1">
+                                <div class="absolute z-10 inset-0 rounded-md bg-gray-200"></div>
+                                <div class="absolute z-20 top-0 bottom-0 rounded-md bg-primary"
+                                    x-bind:style="{ 'left': dir === 'ltr' ? minthumb+'%' : maxthumb+'%', 'right': dir === 'ltr' ? maxthumb+'%' : minthumb+'%' }">
+                                </div>
+                                <div class="absolute z-30 w-5 h-5 top-0 left-0 border-4 bg-white border-primary rounded-full -mt-2 -mr-2"
+                                    x-bind:style="{ 'left': dir === 'ltr' ? minthumb+'%' : maxthumb+'%' }"></div>
+                                <div class="absolute z-30 w-5 h-5 top-0 right-0 border-4 bg-white border-primary rounded-full -mt-2 -mr-4"
+                                    x-bind:style="{ 'right': dir === 'ltr' ? maxthumb+'%' : minthumb+'%' }"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div> -->
+    <div class="grid grid-cols-7 gap-2 maxlg:hidden container">
+      <div class="col-span-1">
+        <label for="country" class="block text-base maxxl:text-sm font-normal mb-3 text-secondary-200">Country
+        </label>
+        <select wire:model.debounce.300ms="country_id" name="country_id"
+          class="border bg-white border-[#C4C4C4] text-secondary-400 font-bold text-sm rounded-lg block w-full p-2.5 focus:border-gray-500 focus:outline-none focus:ring focus:ring-gray-500 focus:ring-opacity-40">
+          <option value="">Select Country</option>
+          <option value="1">مصر</option>
+          <option value="3">المملكه السعوديه</option>
+          <option value="4">امريما</option>
+        </select>
+      </div>
+      <div class="col-span-1">
+        <label for="city" class="block text-base maxxl:text-sm font-normal mb-3 text-secondary-200">City
+        </label>
+        <select wire:model.debounce.300ms="city_id" name="city_id"
+          class="border bg-white border-[#C4C4C4] text-secondary-400 font-bold text-sm rounded-lg block w-full p-2.5 focus:border-gray-500 focus:outline-none focus:ring focus:ring-gray-500 focus:ring-opacity-40">
+          <option value="">Select City</option>
+          <option value="1">السادس من اكتوبر</option>
+          <option value="3">مدينه السادات</option>
+        </select>
+      </div>
+      <div class="col-span-1">
+        <label for="project" class="block text-base maxxl:text-sm font-normal mb-3 text-secondary-200">Project
+        </label>
+        <select wire:model.debounce.300ms="project_id" name="project_id"
+          class="border bg-white border-[#C4C4C4] text-secondary-400 font-bold text-sm rounded-lg block w-full p-2.5 focus:border-gray-500 focus:outline-none focus:ring focus:ring-gray-500 focus:ring-opacity-40">
+          <option value="">Select Project</option>
+          <option value="19">Mehwar Plaza</option>
+          <option value="20">R7 mall</option>
+          <option value="21">Cars Mall</option>
+          <option value="22">center 9</option>
+        </select>
+      </div>
+      <div class="col-span-1">
+        <label for="building" class="block text-base maxxl:text-sm font-normal mb-3 text-secondary-200">Building
+        </label>
+        <select wire:model.debounce.300ms="building_id" name="building_id"
+          class="border bg-white border-[#C4C4C4] text-secondary-400 font-bold text-sm rounded-lg block w-full p-2.5 focus:border-gray-500 focus:outline-none focus:ring focus:ring-gray-500 focus:ring-opacity-40">
+          <option value="">Select Building</option>
+          <option value="11">مبني الاداري في محور بلازا</option>
+          <option value="12">مبني الطبي في محور بلازا</option>
+          <option value="13">مبني تجاري في محور بلازا</option>
+          <option value="14">مبني العيادات</option>
+        </select>
+      </div>
+      <div class="col-span-1">
+        <label for="property_category"
+          class="block text-base maxxl:text-sm font-normal mb-3 text-secondary-200">Property Category</label>
+        <div>
+          <select wire:model.debounce.300ms="category_id" id="category_id" name="category_id"
+            class="border bg-white border-[#C4C4C4] text-secondary-400 font-bold text-sm rounded-lg block w-full p-2.5 focus:border-gray-500 focus:outline-none focus:ring focus:ring-gray-500 focus:ring-opacity-40"
+            required="">
+            <option value="">Select Property Category</option>
+            <option value="34" selected="">Commercial</option>
+            <option value="35">Medical</option>
+            <option value="36">Administrative</option>
+          </select>
+        </div>
+        <span class="text-red-500 text-sm"></span>
+      </div>
+      <div class="flex justify-center px-2 col-span-1">
+        <div x-data="range2()" x-init="mintrigger(); maxtrigger()" class="relative max-w-xl w-full flex flex-col">
+          <p class="block text-[15px] mb-3 font-bold text-secondary-200">
+            Area
+          </p>
+          <div class="flex gap-[1%] text-xs items-center pb-2">
+            <div>
+              <input type="text" maxlength="5" x-on:input="mintrigger" x-model="minprice"
+                class="text-secondary-800/40 rounded w-12" />
+            </div>
+            <span class="text-secondary-800/40">-</span>
+            <div>
+              <input type="text" maxlength="5" x-on:input="maxtrigger" x-model="maxprice"
+                class="text-secondary-800/40 rounded w-12" />
+            </div>
+            <span class="text-secondary-800/40">M</span>
+          </div>
+          <div class="">
+            <input type="range" step="100" x-bind:min="min" x-bind:max="max" x-on:input="mintrigger"
+              wire:model.debounce.300ms="min_area" id="min_area" name="min_area" x-model="minprice"
+              class="absolute pointer-events-none appearance-none z-20 h-2 w-full opacity-0 cursor-pointer" min="0"
+              max="10000" />
+
+            <input type="range" step="100" x-bind:min="min" x-bind:max="max" x-on:input="maxtrigger"
+              wire:model.debounce.300ms="max_area" id="max_area" name="max_area" x-model="maxprice"
+              class="absolute pointer-events-none appearance-none z-20 h-2 w-full opacity-0 cursor-pointer" min="0"
+              max="10000" />
+
+            <div class="relative z-10 h-1">
+              <div class="absolute z-10 inset-0 rounded-md bg-gray-200"></div>
+
+              <div class="absolute z-20 top-0 bottom-0 rounded-md bg-primary"
+                x-bind:style="{ 'left': dir === 'ltr' ? minthumb+'%' : maxthumb+'%', 'right': dir === 'ltr' ? maxthumb+'%' : minthumb+'%' }"
+                style="left: 1%; right: 50%"></div>
+              <div class="absolute z-30 w-5 h-5 top-0 left-0 border-4 bg-white border-primary rounded-full -mt-2 -mr-1"
+                x-bind:style="{ 'left': dir === 'ltr' ? minthumb+'%' : maxthumb+'%' }" style="left: 1%"></div>
+              <div class="absolute z-30 w-5 h-5 top-0 right-0 border-4 bg-white border-primary rounded-full -mt-2 -mr-2"
+                x-bind:style="{ 'right': dir === 'ltr' ? maxthumb+'%' : minthumb+'%' }" style="right: 50%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="flex justify-center px-2 col-span-1">
+        <div x-data="range()" x-init="mintrigger(); maxtrigger()" class="relative max-w-xl w-full">
+          <p class="block text-[15px] mb-3 font-bold text-secondary-200">
+            Price
+          </p>
+
+          <div class="flex gap-[1%] text-xs items-center pb-2">
+            <div>
+              <input type="text" maxlength="5" x-on:input="mintrigger" x-model="minprice" name="min_price"
+                class="text-secondary-800/40 rounded w-[46px]" />
+            </div>
+            <span class="text-secondary-800/40">-</span>
+            <div>
+              <input type="text" maxlength="5" x-on:input="maxtrigger" x-model="maxprice" name="max_price"
+                class="text-secondary-800/40 rounded w-[50px]" />
+            </div>
+            <span class="text-secondary-800/40"> EGP</span>
+          </div>
+          <div class="px-1">
+            <input type="range" step="100" x-bind:min="min" x-bind:max="max" x-on:input="mintrigger"
+              wire:model.debounce.300ms="min_price" id="min_price" name="min_price" x-model="minprice"
+              class="absolute pointer-events-none appearance-none z-20 h-2 w-full opacity-0 cursor-pointer" min="1000"
+              max="10000000" />
+
+            <input type="range" step="100" x-bind:min="min" x-bind:max="max" x-on:input="maxtrigger"
+              wire:model.debounce.300ms="max_price" id="max_price" name="max_price" x-model="maxprice"
+              class="absolute pointer-events-none appearance-none z-20 h-2 w-full opacity-0 cursor-pointer" min="1000"
+              max="10000000" />
+
+            <div class="relative z-10 h-1">
+              <div class="absolute z-10 inset-0 rounded-md bg-gray-200"></div>
+              <div class="absolute z-20 top-0 bottom-0 rounded-md bg-primary"
+                x-bind:style="{ 'left': dir === 'ltr' ? minthumb+'%' : maxthumb+'%', 'right': dir === 'ltr' ? maxthumb+'%' : minthumb+'%' }"
+                style="left: 4.9905%; right: 20.002%"></div>
+              <div class="absolute z-30 w-5 h-5 top-0 left-0 border-4 bg-white border-primary rounded-full -mt-2 -mr-1"
+                x-bind:style="{ 'left': dir === 'ltr' ? minthumb+'%' : maxthumb+'%' }" style="left: 4.9905%"></div>
+              <div class="absolute z-30 w-5 h-5 top-0 right-0 border-4 bg-white border-primary rounded-full -mt-2 -mr-4"
+                x-bind:style="{ 'right': dir === 'ltr' ? maxthumb+'%' : minthumb+'%' }" style="right: 20.002%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="lg:hidden container">
+      <button type="button" x-on:click="filter=!filter"
+        class="text-[#1E294D] bg-white border border-[#D5D5D5] font-normal rounded-[9px] text-[23px] px-8 py-2.5 maxlg:px-6">
+        <i class="fa-solid fa-sliders"></i>
+        تصنيفات
+      </button>
+    </div>
+    <div class="bg-secondary-100 container flex maxlg:flex-col py-7 gap-[3%] relative">
+      <!--aside-->
+      <aside x-show="filter"
+        class="maxlg:fixed maxlg:inset-0 maxlg:z-50 lg:h-fit aside maxlg:w-full w-[20%] lg:sticky lg:top-28">
+        <div class="overlay w-screen h-screen bg-black/10 absolute left-0 top-0 lg:hidden z-20" @click="filter =false">
+        </div>
+        <form
+          class="h-full w-full maxlg:h-[65%] maxlg:shadow-2xl shadow-secondary-1300 flex flex-col gap-4 maxlg:z-50 py-[30px] maxlg:pb-[30px] maxlg:pt-[20px] lg:border bg-secondary-100 text-[#131B39] maxlg:overflow-y-auto scrollbar-hide maxlg:bottom-0 maxlg:fixed rounded-[15px] px-[7%]">
+          <div class="lg:hidden flex justify-between items-center">
+            <h3 class="text-lg text-[#1E294D] font-bold">التصنيفات</h3>
+            <button type="button" x-on:click="filter=false"
+              class="bg-white text-[#090A0A] border border-[#D5D5D5] font-normal rounded-[9px] text-[14px] px-8 py-2 maxlg:px-6">
+              إلغاء
+            </button>
+          </div>
+
+          <hr class="w-80% lg:hidden" />
+          <div class="flex flex-col gap-4 maxlg:px-[5%]">
+            <div x-data="{show : true}" class="flex flex-col gap-4">
+              <div class="flex justify-between items-center" x-on:click="show=!show">
+                <h3 class="text-lg font-bold text-[#131B39]">المشاريع</h3>
+                <i aria-hidden="true" class="fa-solid fa-angle-up text-[22px]"
+                  :class="{'fa-solid fa-angle-up' : show,'fa-solid fa-angle-down' : !show}"></i>
+              </div>
+              <div x-show="show">
+                <ul>
+                  <li x-data="{plus : true}" class="flex gap-3 mb-6">
+                    <div x-on:click="plus=!plus"
+                      class="!w-6 !h-6 border-2 rounded-[5px] border-[#131B39] flex justify-center items-center min-w-max p-[3px]"
+                      :class="{'bg-[#131B39]':!plus}">
+                      <i class="fa-solid fa-plus text-sm"
+                        :class="{'fa-solid fa-minus  text-white' : !plus,'fa-solid fa-plus' : plus}"></i>
+                    </div>
+                    <span class="text-base truncate">بيت الوطن</span>
+                  </li>
+                  <li x-data="{plus : true}" class="flex gap-3">
+                    <div x-on:click="plus=!plus"
+                      class="!w-6 !h-6 border-2 rounded-[5px] border-[#131B39] flex justify-center items-center min-w-max p-[3px]"
+                      :class="{'bg-[#131B39]':!plus}">
+                      <i class="fa-solid fa-plus text-sm"
+                        :class="{'fa-solid fa-minus  text-white' : !plus,'fa-solid fa-plus' : plus}"></i>
+                    </div>
+                    <span class="text-base truncate">
+                      العاصمه الإداريه الجديده</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <hr class="w-80%" />
+            <div x-data="{show : false}" class="flex flex-col gap-4">
+              <div class="flex justify-between items-center" x-on:click="show=!show">
+                <h3 class="text-lg font-bold text-[#131B39]">المبني</h3>
+                <i aria-hidden="true" class="fa-solid fa-angle-up text-[22px]"
+                  :class="{'fa-solid fa-angle-up' : show,'fa-solid fa-angle-down' : !show}"></i>
+              </div>
+              <div x-show="show">
+                <ul>
+                  <li x-data="{plus : true}" class="flex gap-3 mb-6">
+                    <div x-on:click="plus=!plus"
+                      class="!w-6 !h-6 border-2 rounded-[5px] border-[#131B39] flex justify-center items-center min-w-max p-[3px]"
+                      :class="{'bg-[#131B39]':!plus}">
+                      <i class="fa-solid fa-plus text-sm"
+                        :class="{'fa-solid fa-minus  text-white' : !plus,'fa-solid fa-plus' : plus}"></i>
+                    </div>
+                    <span class="text-base truncate">بيت الوطن</span>
+                  </li>
+                  <li x-data="{plus : true}" class="flex gap-3">
+                    <div x-on:click="plus=!plus"
+                      class="!w-6 !h-6 border-2 rounded-[5px] border-[#131B39] flex justify-center items-center min-w-max p-[3px]"
+                      :class="{'bg-[#131B39]':!plus}">
+                      <i class="fa-solid fa-plus text-sm"
+                        :class="{'fa-solid fa-minus  text-white' : !plus,'fa-solid fa-plus' : plus}"></i>
+                    </div>
+                    <span class="text-base truncate">
+                      العاصمه الإداريه الجديده</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <hr class="w-80%" />
+            <div x-data="{show : false}" class="flex flex-col gap-4">
+              <div class="flex justify-between items-center" x-on:click="show=!show">
+                <h3 class="text-lg font-bold text-[#131B39]">النوع</h3>
+                <i aria-hidden="true" class="fa-solid fa-angle-up text-[22px]"
+                  :class="{'fa-solid fa-angle-up' : show,'fa-solid fa-angle-down' : !show}"></i>
+              </div>
+              <div x-show="show">
+                <ul>
+                  <li x-data="{plus : true}" class="flex gap-3 mb-6">
+                    <div x-on:click="plus=!plus"
+                      class="!w-6 !h-6 border-2 rounded-[5px] border-[#131B39] flex justify-center items-center min-w-max p-[3px]"
+                      :class="{'bg-[#131B39]':!plus}">
+                      <i class="fa-solid fa-plus text-sm"
+                        :class="{'fa-solid fa-minus  text-white' : !plus,'fa-solid fa-plus' : plus}"></i>
+                    </div>
+                    <span class="text-base truncate">بيت الوطن</span>
+                  </li>
+                  <li x-data="{plus : true}" class="flex gap-3">
+                    <div x-on:click="plus=!plus"
+                      class="!w-6 !h-6 border-2 rounded-[5px] border-[#131B39] flex justify-center items-center min-w-max p-[3px]"
+                      :class="{'bg-[#131B39]':!plus}">
+                      <i class="fa-solid fa-plus text-sm"
+                        :class="{'fa-solid fa-minus  text-white' : !plus,'fa-solid fa-plus' : plus}"></i>
+                    </div>
+                    <span class="text-base truncate">
+                      العاصمه الإداريه الجديده</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <hr class="w-80%" />
+            <div x-data="{show : true}" class="flex flex-col gap-4">
+              <div class="flex justify-between items-center" x-on:click="show=!show">
+                <h3 class="text-lg font-bold text-[#131B39]">السعر</h3>
+                <i aria-hidden="true" class="fa-solid fa-angle-up text-[22px]"
+                  :class="{'fa-solid fa-angle-up' : show,'fa-solid fa-angle-down' : !show}"></i>
+              </div>
+              <div x-show="show">
+                <div x-data="range()" x-init="mintrigger(); maxtrigger()" class="relative max-w-xl w-full">
+                  <div class="flex gap-[3px] items-center pb-2">
+                    <div>
+                      <input type="text" maxlength="5" x-on:input="mintrigger" x-model="minprice" name="min_price"
+                        class="text-secondary-800/40 rounded w-[50px] 2xl:w-[60px] text-sm 2xl:text-base" />
+                    </div>
+                    <span class="text-secondary-800/40">-</span>
+                    <div>
+                      <input type="text" maxlength="5" x-on:input="maxtrigger" x-model="maxprice" name="max_price"
+                        class="text-secondary-800/40 rounded w-[56px] 2xl:w-[64px] text-sm 2xl:text-base" />
+                    </div>
+                    <span class="text-secondary-800/40 text-sm 2xl:text-base">
+                      ج.م</span>
+                  </div>
+                  <div>
+                    <input type="range" step="100" x-bind:min="min" x-bind:max="max" x-on:input="mintrigger"
+                      x-model="minprice"
+                      class="absolute pointer-events-none appearance-none z-20 h-2 w-full opacity-0 cursor-pointer" />
+
+                    <input type="range" step="100" x-bind:min="min" x-bind:max="max" x-on:input="maxtrigger"
+                      x-model="maxprice"
+                      class="absolute pointer-events-none appearance-none z-20 h-2 w-full opacity-0 cursor-pointer" />
+
+                    <div class="relative z-10 h-1">
+                      <div class="absolute z-10 inset-0 rounded-md bg-gray-200"></div>
+                      <div class="absolute z-20 top-0 bottom-0 rounded-md bg-primary"
+                        x-bind:style="{ 'left': dir === 'ltr' ? minthumb+'%' : maxthumb+'%', 'right': dir === 'ltr' ? maxthumb+'%' : minthumb+'%' }">
+                      </div>
+                      <div
+                        class="absolute z-30 w-5 h-5 top-0 left-0 border-4 bg-white border-primary rounded-full -mt-2 -mr-2"
+                        x-bind:style="{ 'left': dir === 'ltr' ? minthumb+'%' : maxthumb+'%' }"></div>
+                      <div
+                        class="absolute z-30 w-5 h-5 top-0 right-0 border-4 bg-white border-primary rounded-full -mt-2 -mr-4"
+                        x-bind:style="{ 'right': dir === 'ltr' ? maxthumb+'%' : minthumb+'%' }"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <hr class="w-80%" />
+            <div x-data="{show : true}" class="flex flex-col gap-4">
+              <div class="flex justify-between items-center" x-on:click="show=!show">
+                <h3 class="text-lg font-bold text-[#131B39]">المساحة</h3>
+                <i aria-hidden="true" class="fa-solid fa-angle-up text-[22px]"
+                  :class="{'fa-solid fa-angle-up' : show,'fa-solid fa-angle-down' : !show}"></i>
+              </div>
+              <div x-show="show">
+                <div x-data="range2()" x-init="mintrigger(); maxtrigger()" class="relative max-w-xl w-full">
+                  <div class="flex gap-1 items-center pb-2">
+                    <div>
+                      <input type="text" maxlength="5" x-on:input="mintrigger" x-model="minprice"
+                        class="text-secondary-800/40 rounded w-8" />
+                    </div>
+                    <span class="text-secondary-800/40">-</span>
+                    <div>
+                      <input type="text" maxlength="5" x-on:input="maxtrigger2" x-model="maxprice"
+                        class="text-secondary-800/40 rounded w-12" />
+                    </div>
+                    <span class="text-secondary-800/40">م</span>
+                  </div>
+                  <div>
+                    <input type="range" step="100" x-bind:min="min" x-bind:max="max" x-on:input="mintrigger"
+                      x-model="minprice"
+                      class="absolute pointer-events-none appearance-none z-20 h-2 w-full opacity-0 cursor-pointer" />
+
+                    <input type="range" step="100" x-bind:min="min" x-bind:max="max" x-on:input="maxtrigger"
+                      x-model="maxprice"
+                      class="absolute pointer-events-none appearance-none z-20 h-2 w-full opacity-0 cursor-pointer" />
+
+                    <div class="relative z-10 h-1">
+                      <div class="absolute z-10 inset-0 rounded-md bg-gray-200"></div>
+
+                      <div class="absolute z-20 top-0 bottom-0 rounded-md bg-primary"
+                        x-bind:style="{ 'left': dir === 'ltr' ? minthumb+'%' : maxthumb+'%', 'right': dir === 'ltr' ? maxthumb+'%' : minthumb+'%' }">
+                      </div>
+                      <div
+                        class="absolute z-30 w-5 h-5 top-0 left-0 border-4 bg-white border-primary rounded-full -mt-2 -mr-2"
+                        x-bind:style="{ 'left': dir === 'ltr' ? minthumb+'%' : maxthumb+'%' }"></div>
+                      <div
+                        class="absolute z-30 w-5 h-5 top-0 right-0 border-4 bg-white border-primary rounded-full -mt-2 -mr-4"
+                        x-bind:style="{ 'right': dir === 'ltr' ? maxthumb+'%' : minthumb+'%' }"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="lg:hidden flex justify-between w-full items-center">
+            <button type="submit"
+              class="w-full bg-primary text-white border border-[#D5D5D5] font-normal rounded-[9px] text-[14px] px-8 py-2 maxlg:px-6">
+              تطبيق
+            </button>
+          </div>
+        </form>
+      </aside>
+      <!--main-->
+      <main class="main maxlg:order-2 bg-secondary-100 pb-[20px] w-[77%] maxlg:w-full flex flex-col gap-[32px]">
+        <div class="flex items-center w-full border border-[#EAF4F6] rounded py-4 px-11 maxlg:hidden">
+          <div class="flex items-center gap-4">
+            <label for="order" class="text-[18px] font-normal text-secondary-200 min-w-max py-2">ترتيب حسب
+            </label>
+            <div class="w-[200px]">
+              <select id="order" name="order"
+                class="border bg-white border-[#C4C4C4] text-[18px] text-secondary-400 rounded-lg block w-full p-2.5 focus:border-gray-500 focus:outline-none focus:ring focus:ring-gray-500 focus:ring-opacity-40"
+                required>
+                <option selected>الأعلي سعرا</option>
+                <option>الأقل سعرا</option>
+                <option>أراضي</option>
+                <option>مول</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="grid gap-6 2xl:grid-cols-4 grid-cols-3 maxxl:grid-cols-2 maxsm:grid-cols-1 flex-wrap">
+          <div data-aos="fade-left" data-aos-duration="1000"  data-aos-once="true" data-aos-delay="200" class="col-span-1 p-[14px] bg-white rounded-[20px]" style="box-shadow: 0px 10px 30px #0000001a">
+            <div class="relative aspect-square rounded-xl">
+              <a href="# ">
+                <img class="rounded-xl aspect-square w-full" data-src="../img/pexels-pixabay-1.png" alt="" />
+              </a>
+
+              <div
+                class="absolute z-40 rounded-xl inset-0 bg-primary/30 gap-7 flex items-center justify-center opacity-0 hover:opacity-100 transition duration-300">
+                <form action="#" class="gap-7 flex items-center justify-center">
+                  <button type="submit"
+                    class="text-primary bg-white/60 font-bold p-4 text-3xl rounded-xl transition duration-300">
+                    <i class="fa-regular fa-heart hover:text-secondary-1800 hover:font-bold"></i>
+                  </button>
+                  <button type="submit"
+                    class="text-primary bg-white/60 font-bold p-4 text-3xl rounded-xl transition duration-300">
+                    <i class="fa-solid fa-code-compare hover:text-secondary-1800 hover:font-bold"></i>
+                  </button>
+                </form>
+              </div>
+
+              <div class="ribbon z-20 absolute top-0 rtl:left-0 h-32 w-32 overflow-hidden">
+                <div
+                  class="absolute -left-10 top-[16px] w-40 -rotate-45 bg-secondary-1800 py-2.5 text-center text-[12px] maxlg:text-sm font-semibold text-white">
+                  نفذ
+                </div>
+              </div>
+
+              <div class="absolute top-6 right-5">
+                <button type="button"
+                  class="text-white bg-[#75B4D4] font-normal rounded-[9px] text-[13px] px-8 py-2.5 maxlg:px-6">
+                  250 م
+                </button>
+              </div>
+              <div class="absolute bottom-4 lg:bottom-[21px] flex justify-between items-center w-full px-5">
+                <div class="">
+                  <button type="button"
+                    class="text-white bg-primary font-normal rounded-[9px] text-[13px] px-8 py-2.5 maxlg:px-6">
+                    مشروع 286
+                  </button>
+                </div>
+                <div class="">
+                  <button type="button"
+                    class="text-white bg-[#2B3140] font-normal rounded-[9px] text-[13px] px-8 py-2.5 maxlg:px-6">
+                    شقة
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-5 mb-8 px-[18px]">
+              <a href="#">
+                <h5 class="text-base font-normal text-secondary-1000">
+                  وحدة سكنية
+                </h5>
+              </a>
+            </div>
+          </div>
+          <div data-aos="fade-left" data-aos-duration="1000"  data-aos-once="true" data-aos-delay="400" class="col-span-1 p-[14px] bg-white rounded-[20px]" style="box-shadow: 0px 10px 30px #0000001a">
+            <div class="relative aspect-square rounded-xl">
+              <a href="# ">
+                <img class="rounded-xl aspect-square w-full" data-src="../img/pexels-pixabay-1.png" alt="" />
+              </a>
+
+              <div
+                class="absolute z-40 rounded-xl inset-0 bg-primary/30 gap-7 flex items-center justify-center opacity-0 hover:opacity-100 transition duration-300">
+                <form action="#" class="gap-7 flex items-center justify-center">
+                  <button type="submit"
+                    class="text-primary bg-white/60 font-bold p-4 text-3xl rounded-xl transition duration-300">
+                    <i class="fa-regular fa-heart hover:text-secondary-1800 hover:font-bold"></i>
+                  </button>
+                  <button type="submit"
+                    class="text-primary bg-white/60 font-bold p-4 text-3xl rounded-xl transition duration-300">
+                    <i class="fa-solid fa-code-compare hover:text-secondary-1800 hover:font-bold"></i>
+                  </button>
+                </form>
+              </div>
+
+              <div class="absolute top-6 right-5">
+                <button type="button"
+                  class="text-white bg-[#75B4D4] font-normal rounded-[9px] text-[13px] px-8 py-2.5 maxlg:px-6">
+                  250 م
+                </button>
+              </div>
+              <div class="absolute bottom-4 lg:bottom-[21px] flex justify-between items-center w-full px-5">
+                <div class="">
+                  <button type="button"
+                    class="text-white bg-primary font-normal rounded-[9px] text-[13px] px-8 py-2.5 maxlg:px-6">
+                    مشروع 286
+                  </button>
+                </div>
+                <div class="">
+                  <button type="button"
+                    class="text-white bg-[#2B3140] font-normal rounded-[9px] text-[13px] px-8 py-2.5 maxlg:px-6">
+                    شقة
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-5 mb-8 px-[18px]">
+              <a href="#">
+                <h5 class="text-base font-normal text-secondary-1000">
+                  وحدة سكنية
+                </h5>
+              </a>
+            </div>
+          </div>
+          <div data-aos="fade-left" data-aos-duration="1000"  data-aos-once="true" data-aos-delay="600" class="col-span-1 p-[14px] bg-white rounded-[20px]" style="box-shadow: 0px 10px 30px #0000001a">
+            <div class="relative aspect-square rounded-xl">
+              <a href="# ">
+                <img class="rounded-xl aspect-square w-full" data-src="../img/pexels-pixabay-1.png" alt="" />
+              </a>
+
+              <div
+                class="absolute z-40 rounded-xl inset-0 bg-primary/30 gap-7 flex items-center justify-center opacity-0 hover:opacity-100 transition duration-300">
+                <form action="#" class="gap-7 flex items-center justify-center">
+                  <button type="submit"
+                    class="text-primary bg-white/60 font-bold p-4 text-3xl rounded-xl transition duration-300">
+                    <i class="fa-regular fa-heart hover:text-secondary-1800 hover:font-bold"></i>
+                  </button>
+                  <button type="submit"
+                    class="text-primary bg-white/60 font-bold p-4 text-3xl rounded-xl transition duration-300">
+                    <i class="fa-solid fa-code-compare hover:text-secondary-1800 hover:font-bold"></i>
+                  </button>
+                </form>
+              </div>
+
+              <div class="ribbon z-20 absolute top-0 rtl:left-0 h-32 w-32 overflow-hidden">
+                <div
+                  class="absolute -left-10 top-[16px] w-40 -rotate-45 bg-secondary-1600 py-2.5 text-center text-[12px] font-semibold text-white">
+                  خصم 15 %
+                </div>
+              </div>
+
+              <div class="absolute top-6 right-5">
+                <button type="button"
+                  class="text-white bg-[#75B4D4] font-normal rounded-[9px] text-[13px] px-8 py-2.5 maxlg:px-6">
+                  250 م
+                </button>
+              </div>
+              <div class="absolute bottom-4 lg:bottom-[21px] flex justify-between items-center w-full px-5">
+                <div class="">
+                  <button type="button"
+                    class="text-white bg-primary font-normal rounded-[9px] text-[13px] px-8 py-2.5 maxlg:px-6">
+                    مشروع 286
+                  </button>
+                </div>
+                <div class="">
+                  <button type="button"
+                    class="text-white bg-[#2B3140] font-normal rounded-[9px] text-[13px] px-8 py-2.5 maxlg:px-6">
+                    شقة
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-5 mb-8 px-[18px]">
+              <a href="#">
+                <h5 class="text-base font-normal text-secondary-1000">
+                  وحدة سكنية
+                </h5>
+              </a>
+            </div>
+          </div>
+          <div data-aos="fade-left" data-aos-duration="1000"  data-aos-once="true" data-aos-delay="800" class="col-span-1 p-[14px] bg-white rounded-[20px]" style="box-shadow: 0px 10px 30px #0000001a">
+            <div class="relative aspect-square rounded-xl">
+              <a href="# ">
+                <img class="rounded-xl aspect-square w-full" data-src="../img/pexels-pixabay-1.png" alt="" />
+              </a>
+
+              <div
+                class="absolute z-40 rounded-xl inset-0 bg-primary/30 gap-7 flex items-center justify-center opacity-0 hover:opacity-100 transition duration-300">
+                <form action="#" class="gap-7 flex items-center justify-center">
+                  <button type="submit"
+                    class="text-primary bg-white/60 font-bold p-4 text-3xl rounded-xl transition duration-300">
+                    <i class="fa-regular fa-heart hover:text-secondary-1800 hover:font-bold"></i>
+                  </button>
+                  <button type="submit"
+                    class="text-primary bg-white/60 font-bold p-4 text-3xl rounded-xl transition duration-300">
+                    <i class="fa-solid fa-code-compare hover:text-secondary-1800 hover:font-bold"></i>
+                  </button>
+                </form>
+              </div>
+
+              <div class="ribbon z-20 absolute top-0 rtl:left-0 h-32 w-32 overflow-hidden">
+                <div
+                  class="absolute -left-10 top-[16px] w-40 -rotate-45 bg-secondary-1800 py-2.5 text-center text-[12px] maxlg:text-sm font-semibold text-white">
+                  نفذ
+                </div>
+              </div>
+
+              <div class="absolute top-6 right-5">
+                <button type="button"
+                  class="text-white bg-[#75B4D4] font-normal rounded-[9px] text-[13px] px-8 py-2.5 maxlg:px-6">
+                  250 م
+                </button>
+              </div>
+              <div class="absolute bottom-4 lg:bottom-[21px] flex justify-between items-center w-full px-5">
+                <div class="">
+                  <button type="button"
+                    class="text-white bg-primary font-normal rounded-[9px] text-[13px] px-8 py-2.5 maxlg:px-6">
+                    مشروع 286
+                  </button>
+                </div>
+                <div class="">
+                  <button type="button"
+                    class="text-white bg-[#2B3140] font-normal rounded-[9px] text-[13px] px-8 py-2.5 maxlg:px-6">
+                    شقة
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-5 mb-8 px-[18px]">
+              <a href="#">
+                <h5 class="text-base font-normal text-secondary-1000">
+                  وحدة سكنية
+                </h5>
+              </a>
+            </div>
+          </div>
+          <div data-aos="fade-left" data-aos-duration="1000"  data-aos-once="true" data-aos-delay="1000" class="col-span-1 p-[14px] bg-white rounded-[20px]" style="box-shadow: 0px 10px 30px #0000001a">
+            <div class="relative aspect-square rounded-xl">
+              <a href="# ">
+                <img class="rounded-xl aspect-square w-full" data-src="../img/pexels-pixabay-1.png" alt="" />
+              </a>
+
+              <div
+                class="absolute z-40 rounded-xl inset-0 bg-primary/30 gap-7 flex items-center justify-center opacity-0 hover:opacity-100 transition duration-300">
+                <form action="#" class="gap-7 flex items-center justify-center">
+                  <button type="submit"
+                    class="text-primary bg-white/60 font-bold p-4 text-3xl rounded-xl transition duration-300">
+                    <i class="fa-regular fa-heart hover:text-secondary-1800 hover:font-bold"></i>
+                  </button>
+                  <button type="submit"
+                    class="text-primary bg-white/60 font-bold p-4 text-3xl rounded-xl transition duration-300">
+                    <i class="fa-solid fa-code-compare hover:text-secondary-1800 hover:font-bold"></i>
+                  </button>
+                </form>
+              </div>
+
+              <div class="absolute top-6 right-5">
+                <button type="button"
+                  class="text-white bg-[#75B4D4] font-normal rounded-[9px] text-[13px] px-8 py-2.5 maxlg:px-6">
+                  250 م
+                </button>
+              </div>
+              <div class="absolute bottom-4 lg:bottom-[21px] flex justify-between items-center w-full px-5">
+                <div class="">
+                  <button type="button"
+                    class="text-white bg-primary font-normal rounded-[9px] text-[13px] px-8 py-2.5 maxlg:px-6">
+                    مشروع 286
+                  </button>
+                </div>
+                <div class="">
+                  <button type="button"
+                    class="text-white bg-[#2B3140] font-normal rounded-[9px] text-[13px] px-8 py-2.5 maxlg:px-6">
+                    شقة
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-5 mb-8 px-[18px]">
+              <a href="#">
+                <h5 class="text-base font-normal text-secondary-1000">
+                  وحدة سكنية
+                </h5>
+              </a>
+            </div>
+          </div>
+          <div data-aos="fade-left" data-aos-duration="1000"  data-aos-once="true" data-aos-delay="1200" class="col-span-1 p-[14px] bg-white rounded-[20px]" style="box-shadow: 0px 10px 30px #0000001a">
+            <div class="relative aspect-square rounded-xl">
+              <a href="# ">
+                <img class="rounded-xl aspect-square w-full" data-src="../img/pexels-pixabay-1.png" alt="" />
+              </a>
+
+              <div
+                class="absolute z-40 rounded-xl inset-0 bg-primary/30 gap-7 flex items-center justify-center opacity-0 hover:opacity-100 transition duration-300">
+                <form action="#" class="gap-7 flex items-center justify-center">
+                  <button type="submit"
+                    class="text-primary bg-white/60 font-bold p-4 text-3xl rounded-xl transition duration-300">
+                    <i class="fa-regular fa-heart hover:text-secondary-1800 hover:font-bold"></i>
+                  </button>
+                  <button type="submit"
+                    class="text-primary bg-white/60 font-bold p-4 text-3xl rounded-xl transition duration-300">
+                    <i class="fa-solid fa-code-compare hover:text-secondary-1800 hover:font-bold"></i>
+                  </button>
+                </form>
+              </div>
+
+              <div class="ribbon z-20 absolute top-0 rtl:left-0 h-32 w-32 overflow-hidden">
+                <div
+                  class="absolute -left-10 top-[16px] w-40 -rotate-45 bg-secondary-1600 py-2.5 text-center text-[12px] font-semibold text-white">
+                  خصم 15 %
+                </div>
+              </div>
+
+              <div class="absolute top-6 right-5">
+                <button type="button"
+                  class="text-white bg-[#75B4D4] font-normal rounded-[9px] text-[13px] px-8 py-2.5 maxlg:px-6">
+                  250 م
+                </button>
+              </div>
+              <div class="absolute bottom-4 lg:bottom-[21px] flex justify-between items-center w-full px-5">
+                <div class="">
+                  <button type="button"
+                    class="text-white bg-primary font-normal rounded-[9px] text-[13px] px-8 py-2.5 maxlg:px-6">
+                    مشروع 286
+                  </button>
+                </div>
+                <div class="">
+                  <button type="button"
+                    class="text-white bg-[#2B3140] font-normal rounded-[9px] text-[13px] px-8 py-2.5 maxlg:px-6">
+                    شقة
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-5 mb-8 px-[18px]">
+              <a href="#">
+                <h5 class="text-base font-normal text-secondary-1000">
+                  وحدة سكنية
+                </h5>
+              </a>
+            </div>
+          </div>
+        </div>
+        <!--pagination-->
+        <div class="grid maxlg:col-span-2 justify-center mt-16">
+          <nav class="isolate inline-flex gap-[10px] maxsm:gap-3 -space-x-px rounded-md shadow-sm"
+            aria-label="Pagination">
+            <a href="#"
+              class="relative inline-flex items-center justify-center rounded-md px-4 aspect-square w-9 text-primary bg-white hover:bg-primary hover:text-white focus:z-20 focus:outline-offset-0"
+              style="box-shadow: 0px 3px 20px #1e294d26">
+              <span class="sr-only">Previous</span>
+              <i aria-hidden="true" class="fa fa-angle-right text-4"
+                :class="{'fa-solid fa-angle-right' : dir == 'rtl','fa-solid fa-angle-left' : dir == 'ltr'}"></i>
+            </a>
+
+            <a href="#" aria-current="page"
+              class="relative rounded-lg inline-flex items-center justify-center aspect-square !w-9 text-4 font-bold active-pagination hover:text-white hover:bg-primary z-10 focus:z-20"
+              style="box-shadow: 0px 3px 20px #1e294d26">1</a>
+            <a href="#"
+              class="relative rounded-lg inline-flex items-center px-4 justify-center aspect-square w-9 text-4 font-bold text-secondary-2200 hover:bg-primary bg-white hover:text-white focus:z-20 focus:outline-offset-0"
+              style="box-shadow: 0px 3px 20px #1e294d26">2</a>
+            <a href="#"
+              class="relative rounded-lg hidden items-center justify-center px-4 aspect-square w-9 text-4 font-bold text-secondary-2200 hover:bg-primary bg-white hover:text-white focus:z-20 focus:outline-offset-0 md:inline-flex"
+              style="box-shadow: 0px 3px 20px #1e294d26">3</a>
+            <a href="#"
+              class="relative rounded-lg hidden items-center justify-center px-4 aspect-square w-9 text-4 font-bold text-secondary-2200 hover:bg-primary bg-white hover:text-white focus:z-20 focus:outline-offset-0 md:inline-flex"
+              style="box-shadow: 0px 3px 20px #1e294d26">4</a>
+
+            <span
+              class="relative inline-flex items-center px-4 justify-center aspect-square w-9 text-4 font-bold text-secondary-2200 focus:outline-offset-0">...</span>
+
+            <a href="#"
+              class="relative rounded-lg inline-flex items-center justify-center px-4 aspect-square w-9 text-4 font-bold text-secondary-2200 bg-white hover:bg-primary hover:text-white focus:z-20 focus:outline-offset-0"
+              style="box-shadow: 0px 3px 20px #1e294d26">10</a>
+            <a href="#"
+              class="relative rounded-lg inline-flex items-center justify-center aspect-square w-9 px-4 text-primary bg-white hover:bg-primary hover:text-white focus:z-20 focus:outline-offset-0"
+              style="box-shadow: 0px 3px 20px #1e294d26">
+              <span class="sr-only">Next</span>
+
+              <i aria-hidden="true" class="fa fa-angle-left text-4"
+                :class="{'fa-solid fa-angle-left' : dir == 'rtl','fa-solid fa-angle-right' : dir == 'ltr'}"></i>
+            </a>
+          </nav>
+        </div>
+        <!--end of pagination-->
+      </main>
+    </div>
+  </section>
+
+  <!--footer start-->
+  <footer>
+    <div class="pt-16 bg-secondary-1500">
+      <div class="lg:flex lg:items-start lg:gap-8 sm:px-6 px-4 lg:px-[70px]">
+        <div class="mt-8 w-full grid grid-cols-3 gap-8 lg:mt-0 lg:grid-cols-6 lg:gap-y-16">
+          <div class="col-span-6 grid w-full grid-cols-7 gap-8 lg:mt-0 px-3">
+            <div class="col-span-7 lg:col-span-2 flex items-center">
+              <div>
+                <h2 class="text-2xl lg:min-w-[235px] maxmd:text-center font-bold text-secondary-1000">
+                  اشترك بالنشرة البريدية
+                </h2>
+              </div>
+            </div>
+
+            <div class="col-span-7 bg-secondary-100 rounded-[10px] lg:col-span-5 lg:flex lg:items-end"
+              style="box-shadow: 0px 5px 15px #1e294d33">
+              <form action="" class="w-full h-full rounded-[10px]">
+                <label for="UserEmail" class="sr-only"> Email </label>
+
+                <div class="h-full border border-gray-100 flex items-center gap-4 rounded-[10px]">
+                  <input type="email" id="email" name="footer_email"
+                    class="bg-secondary-100 text-secondary-1000 text-sm rounded-[10px] block w-full p-2.5 focus:border-gray-500 focus:outline-none focus:ring focus:ring-gray-500 focus:ring-opacity-40"
+                    placeholder="... اكتب بريدك الالكتروني هنا" required />
+
+                  <button type="submit"
+                    class="rounded-[10px] bg-secondary-1000 h-full px-6 py-4 maxmd:py-[9px] text-base font-normal uppercase tracking-wide text-white transition-none mt-0 lg:w-40 flex-shrink-0 hover:scale-110">
+                    اشتراك
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="col-span-6 lg:col-span-3 grid w-full grid-cols-3 gap-8 lg:mt-0 lg:gap-y-16">
+            <div class="col-span-3 flex justify-center sm:col-span-1">
+              <img class="w-[137px] h-[152px]" data-src="../img/Group 40870.png" alt="" />
+            </div>
+
+            <div class="col-span-3 flex-col items-center justify-center maxlg:text-center sm:col-span-2 maxmd:px-20">
+              <ul class="space-y-4 text-sm">
+                <li>
+                  <div class="flex items-center maxmd:flex-col maxmd:justify-center gap-[22px] maxmd:gap-0">
+                    <i class="fa-regular fa-envelope text-primary text-base font-normal"></i>
+                    <a href=" mailto:info@namaaalkhaleej.com" class="text-[17px] text-secondary-1400 font-normal">
+                      <h2>info@namaaalkhaleej.com</h2>
+                    </a>
+                  </div>
+                </li>
+
+                <li>
+                  <div class="flex items-center maxmd:flex-col maxmd:justify-center gap-[22px] maxmd:gap-0">
+                    <i class="fa-solid fa-phone-flip text-xl text-primary"></i>
+                    <a href="tel:201093744441+" class="text-[17px] text-secondary-1400 font-normal">201093744441+</a>
+                  </div>
+                </li>
+
+                <li>
+                  <div
+                    class="flex items-start maxmd:items-center maxmd:flex-col maxmd:justify-center gap-[22px] maxmd:gap-0">
+                    <i class="fa-solid fa-map-location-dot text-xl text-primary"></i>
+                    <a href="" class="text-[17px] text-secondary-1400 font-normal">احمد اسماعيل علي مدينة السادات محافظة
+                      المنوفية 32865</a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <ul class="col-span-3 flex justify-center lg:justify-start gap-8 maxmd:gap-4">
+              <li>
+                <a href="#" rel="noreferrer" target="_blank" class="text-secondary-1100 transition">
+                  <span class="sr-only">youtube</span>
+                  <i
+                    class="fa-brands fa-youtube text-3xl maxvarysmvarysm:text-2xl text-secondary-2200 hover:text-primary"></i>
+                </a>
+              </li>
+              <li>
+                <a href="#" rel="noreferrer" target="_blank" class="text-secondary-1100 transition">
+                  <span class="sr-only">behance</span>
+                  <i
+                    class="fa-brands fa-behance text-3xl maxvarysmvarysm:text-2xl text-secondary-2200 hover:text-primary hover"></i>
+                </a>
+              </li>
+
+              <li>
+                <a href="#" rel="noreferrer" target="_blank" class="text-secondary-1100 transition">
+                  <span class="sr-only">Facebook</span>
+                  <i
+                    class="fa-brands fa-facebook text-3xl maxvarysmvarysm:text-2xl text-secondary-2200 hover:text-primary"></i>
+                </a>
+              </li>
+
+              <li>
+                <a href="#" rel="noreferrer" target="_blank" class="text-secondary-1100 transition">
+                  <span class="sr-only">Twitter</span>
+
+                  <i
+                    class="fa-brands fa-twitter text-3xl maxvarysmvarysm:text-2xl text-secondary-2200 hover:text-primary"></i>
+                </a>
+              </li>
+
+              <li>
+                <a href="#" rel="noreferrer" target="_blank" class="text-secondary-1100 transition">
+                  <span class="sr-only">linkedin</span>
+
+                  <i
+                    class="fa-brands fa-linkedin text-3xl maxvarysmvarysm:text-2xl text-secondary-2200 hover:text-primary"></i>
+                </a>
+              </li>
+              <li>
+                <a href="#" rel="noreferrer" target="_blank" class="text-secondary-1100 transition">
+                  <span class="sr-only">Instgram</span>
+
+                  <i
+                    class="fa-brands fa-instagram text-3xl maxvarysmvarysm:text-2xl text-secondary-2200 hover:text-primary"></i>
+                </a>
+              </li>
+              <li>
+                <a href="#" rel="noreferrer" target="_blank" class="text-secondary-1100 transition">
+                  <span class="sr-only">Tiktok</span>
+
+                  <i
+                    class="fa-brands fa-tiktok text-3xl maxvarysmvarysm:text-2xl text-secondary-2200 hover:text-primary"></i>
+                </a>
+              </li>
+              <li>
+                <a href="#" rel="noreferrer" target="_blank" class="text-secondary-1100 transition">
+                  <span class="sr-only">telegram</span>
+
+                  <i
+                    class="fa-brands fa-telegram text-3xl maxvarysmvarysm:text-2xl text-secondary-2200 hover:text-primary"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-span-6 lg:col-span-3 grid w-full grid-cols-3 gap-8 lg:mt-0 lg:gap-y-16">
+            <div class="col-span-3 flex-col justify-center items-center maxlg:text-center sm:col-span-1">
+              <p class="font-normal text-secondary-1000 text-xl">
+                روابط مهمة
+              </p>
+
+              <nav aria-label="Footer Navigation - " class="mt-3">
+                <ul class="space-y-3 text-lg maxlg:text-base">
+                  <li>
+                    <a href="index.html"
+                      class="text-secondary-1100 text-lg maxlg:text-base transition hover:text-primary">
+                      الرئيسية
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="about_company.html"
+                      class="text-secondary-1100 text-lg maxlg:text-base transition hover:text-primary">
+                      عن الشركة
+                    </a>
+                  </li>
+                  <li>
+                    <a href="terms_conditions.html"
+                      class="text-secondary-1100 text-lg maxlg:text-base transition hover:text-primary">
+                      الشروط و الأحكام
+                    </a>
+                  </li>
+                  <li>
+                    <a href="privacy_policy.html"
+                      class="text-secondary-1100 text-lg maxlg:text-base transition hover:text-primary">
+                      سياسة الخصوصية
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+
+            <div class="col-span-3 flex-col justify-center maxlg:text-center sm:col-span-1">
+              <p class="font-normal text-secondary-1000 text-xl">خدماتنا</p>
+
+              <nav aria-label="Footer Navigation - " class="mt-3">
+                <ul class="space-y-3 text-sm">
+                  <li>
+                    <a href="Photo_gallery.html"
+                      class="text-secondary-1100 text-lg maxlg:text-base transition hover:text-primary">
+                      معرض الصور
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="video_gallery.html"
+                      class="text-secondary-1100 text-lg maxlg:text-base transition hover:text-primary">
+                      معرض الفديوهات
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="our_projects.html"
+                      class="text-secondary-1100 text-lg maxlg:text-base transition hover:text-primary">
+                      مشاريعنا
+                    </a>
+                  </li>
+                  <li>
+                    <a href="blog.html"
+                      class="text-secondary-1100 text-lg maxlg:text-base transition hover:text-primary">
+                      المدونة
+                    </a>
+                  </li>
+                  <li>
+                    <a href="category.html"
+                      class="text-secondary-1100 text-lg maxlg:text-base transition hover:text-primary">
+                      الوحدات
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+
+            <div class="col-span-3 flex-col justify-center maxlg:text-center sm:col-span-1">
+              <p class="font-normal text-secondary-1000 text-xl">
+                تواصل معنا
+              </p>
+
+              <nav aria-label="Footer Navigation - " class="mt-3">
+                <ul class="space-y-3 text-sm">
+                  <li>
+                    <a href="customer_request.html"
+                      class="text-secondary-1100 text-lg maxlg:text-base transition hover:text-primary">
+                      تقديم طلب
+                    </a>
+                  </li>
+                  <li>
+                    <a href="contact_us.html"
+                      class="text-secondary-1100 text-lg maxlg:text-base transition hover:text-primary">
+                      اتصل بنا
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+
+            <div class="px-8 justify-center lg:justify-end col-span-3 flex gap-6 lg:col-span-3"
+              x-data="{toggleDir() { this.dir = this.dir === 'ltr' ? 'rtl' : 'ltr' }}">
+              <button class="flex text-secondary-1100 hover:text-primary items-center text-2xl gap-[9px] font-normal"
+                x-on:click="toggleDir()">
+                English
+                <i class="fa-solid fa-language text-4xl"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-secondary-100 border-t border-gray-100 pt-3 pb-4 px-6 sm:px-32">
+        <div class="flex maxmd:flex-col maxmd:gap-2 justify-between maxmd:items-center">
+          <p class="text-xs text-center text-gray-500">
+            جميع الحقوق محفوظة لدي نماء الخليج © 2023
+          </p>
+
+          <nav aria-label="Footer Navigation - Support" class="mt-0">
+            <ul class="flex flex-wrap justify-center gap-4 text-xs lg:justify-end">
+              <li>
+                <a href="https://paymac.net/" class="text-gray-500 transition hover:text-primary">
+                  تدار بواسطة
+                  <span class="text-secondary-1400 font-bold">Paymac</span>
+                  للبرمجيات
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!--footer end-->
+
+  <footer x-data="{toggle1:true,toggle2:false}" class="fixed inset-x-0 bottom-0 p-4 pb-10 z-40 w-20">
+    <div x-show="toggle2"
+      class="relative text-2xl bg-secondary-100 text-primary hover:text-white hover:bg-primary w-14 h-14 flex justify-center items-center rounded-full rtl:mr-2 ltr:ml-2 mb-2 z-[222222]"
+      style="box-shadow: 0px 0px 20px #23418f1a">
+      <a href=""> <i class="fa-brands fa-facebook-messenger"></i></a>
+    </div>
+
+    <a href="">
+      <div x-show="toggle2"
+        class="relative text-2xl bg-secondary-100 text-primary hover:text-white hover:bg-primary w-14 h-14 flex justify-center items-center rounded-full rtl:mr-2 ltr:ml-2 mb-2 z-[222222]"
+        style="box-shadow: 0px 0px 20px #23418f1a">
+        <i class="fa-brands fa-whatsapp text-2xl"></i>
+      </div>
+    </a>
+    <div x-show="toggle2"
+      class="relative text-xl bg-secondary-100 text-primary hover:text-white hover:bg-primary w-14 h-14 flex justify-center items-center rounded-full rtl:mr-2 ltr:ml-2 mb-2 z-[222222]"
+      style="box-shadow: 0px 0px 20px #23418f1a">
+      <a href=""> <i class="fa-solid fa-phone-flip text-lg"></i></a>
+    </div>
+    <div @click="toggle2=!toggle2" x-show="toggle1"
+      class="rounded-full text-2xl bg-secondary-100 text-primary hover:text-white hover:bg-primary w-[60px] h-[60px] rtl:mr-1 ltr:ml-1 flex justify-center items-center z-[222222] cursor-pointer"
+      style="box-shadow: 0px 0px 20px #23418f1a">
+      <i class="fa-solid fa-message" x-show="!toggle2"></i>
+      <i class="fa-solid fa-x" x-show="toggle2"></i>
+    </div>
+    <div @click="topFunction()"
+      class="relative bg-secondary-100 text-primary hover:text-white hover:bg-primary w-7 h-7 flex justify-center items-center rounded-full rtl:mr-5 ltr:ml-5 mt-2 z-[222222] cursor-pointer"
+      style="box-shadow: 0px 0px 20px #23418f1a">
+      <i class="fa-solid fa-angle-up"></i>
+    </div>
+  </footer>
+
+  <script src="../js/alpine.js"></script>
+  <script src="../js/pwajs.js"></script>
+  <script src="../js/app.js" defer></script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+</body>
+
+</html>
