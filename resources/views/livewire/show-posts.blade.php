@@ -1,5 +1,5 @@
 <div>
-@include('livewire.includes.nav')
+
 <section class="bg-secondary-100">
       <div class="bg-secondary-100 flex maxlg:flex-col container gap-[30px] pt-16">
         <!--main-->

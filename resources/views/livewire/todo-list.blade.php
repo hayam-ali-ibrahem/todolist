@@ -1,5 +1,4 @@
 <div>
-@include('livewire.includes.nav')
 @include('livewire.includes.create-form-todo-list')
 @include('livewire.includes.search-box') 
         <div id="todos-list">

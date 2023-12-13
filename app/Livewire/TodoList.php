@@ -28,11 +28,11 @@ class TodoList extends Component
     public function create(){
      $validated=$this->validateOnly('name');
      $todo=Todo::create($validated);
-     if ($this->image) {
+       if ($this->image) {
         $todo->addMedia($this->image->getRealPath())
         ->toMediaCollection('image');
        
-    }
+       }
      $this->reset('name');
      session()->flash('success','Created');
     }
